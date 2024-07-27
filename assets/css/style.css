@@ -1460,3 +1460,10 @@ footer .credits {
 footer .credits a {
   color: #fff;
 }
+
+.contacts
+{
+  width: 24px;
+  height: 24px;
+  margin-top: -5px;
+}
