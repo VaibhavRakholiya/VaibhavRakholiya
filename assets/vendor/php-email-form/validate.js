@@ -27,25 +27,31 @@
 
       let formData = new FormData( thisForm );
 
-      if ( recaptcha ) {
-        if(typeof grecaptcha !== "undefined" ) {
-          grecaptcha.ready(function() {
-            try {
-              grecaptcha.execute(recaptcha, {action: 'php_email_form_submit'})
-              .then(token => {
-                formData.set('recaptcha-response', token);
-                php_email_form_submit(thisForm, action, formData);
-              })
-            } catch(error) {
-              displayError(thisForm, error);
-            }
-          });
-        } else {
-          displayError(thisForm, 'The reCaptcha javascript API url is not loaded!')
-        }
-      } else {
-        php_email_form_submit(thisForm, action, formData);
-      }
+      php_email_form_submit(thisForm, action, formData);
+
+      // if ( recaptcha) {
+      //   if(typeof grecaptcha !== "undefined") 
+      //   {
+      //       grecaptcha.ready(function() 
+      //       {
+      //         try {
+      //           grecaptcha.execute(recaptcha, {action: 'php_email_form_submit'})
+      //           .then(token => {
+      //             formData.set('recaptcha-response', token);
+      //             php_email_form_submit(thisForm, action, formData);
+      //           })
+      //         } catch(error) {
+      //           displayError(thisForm, error);
+      //         }
+      //       });
+      //   } 
+      //   else 
+      //   {
+      //     displayError(thisForm, 'The reCaptcha javascript API url is not loaded!')
+      //   }
+      // } else {
+      //   php_email_form_submit(thisForm, action, formData);
+      // }
     });
   });
 
@@ -77,9 +83,9 @@
   }
 
   function displayError(thisForm, error) {
-    thisForm.querySelector('.loading').classList.remove('d-block');
-    thisForm.querySelector('.error-message').innerHTML = error;
-    thisForm.querySelector('.error-message').classList.add('d-block');
+    // thisForm.querySelector('.loading').classList.remove('d-block');
+    // thisForm.querySelector('.error-message').innerHTML = error;
+    // thisForm.querySelector('.error-message').classList.add('d-block');
   }
 
 })();

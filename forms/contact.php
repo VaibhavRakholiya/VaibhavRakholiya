@@ -6,6 +6,8 @@
   * For more info and help: https://bootstrapmade.com/php-email-form/
   */
 
+  use PHP_Email_Form\PHP_Email_Form;
+
   // Replace contact@example.com with your real receiving email address
   $receiving_email_address = 'rakholiyavaibhav@gmail.com';
 
