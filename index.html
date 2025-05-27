@@ -722,8 +722,10 @@
                       </h5>
                     </div>
                     <div>
-                      <form action="https://formsubmit.co/rakholiyavaibhav@gmail.com" method="post" role="form" class="php-email-form">
+                      <form class="php-email-form" id ="contact-form">
+                        
                         <input type="hidden" name="_captcha" value="false">
+                        
                         <div class="row">
                           <div class="col-md-12 mb-3">
                             <div class="form-group">
@@ -746,9 +748,10 @@
                             </div>
                           </div>
                           <div class="col-md-12 text-center my-3">
-                            <div class="loading">Loading</div>
-                            <div class="error-message"></div>
-                            <div class="sent-message">Your message has been sent. Thank you!</div>
+                            <div class="loading" id = "loading">Loading</div>
+                            <div class="error-message" id = "error-message"></div>
+                            <div class="sent-message" id = "sent-message">Your message has been sent. Thank you!</div>
+                            <div id = "form-status"></div>
                           </div>
                           <div class="col-md-12 text-center">
                             <button type="submit" class="button button-a button-big button-rouded">Send Message</button>
@@ -833,6 +836,43 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <script>
+    document.getElementById("contact-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const form = e.target;
+      const data = new FormData(form);
+
+      document.getElementById("loading").classList.add('d-block');
+
+
+      fetch("https://formsubmit.co/rakholiyavaibhav@gmail.com", {
+        method: "POST",
+        body: data,
+      })
+      .then(response => {
+        if (response.ok) 
+        {
+          // document.getElementById("form-status").innerHTML = "<p style='color:green;'>Message sent successfully!</p>";
+          document.getElementById('sent-message').classList.add('d-block');
+          document.getElementById('error-message').classList.remove('d-block');
+          document.getElementById("loading").classList.remove('d-block');
+          form.reset();
+        } else 
+        {
+          // thisForm.querySelector('.sent-message').classList.remove('d-block');
+          document.getElementById('error-message').classList.add('d-block');
+          document.getElementById('sent-message').classList.remove('d-block');
+          document.getElementById("loading").classList.remove('d-block');
+          // document.getElementById("form-status").innerHTML = "<p style='color:red;'>Failed to send message.</p>";
+        }
+      })
+      .catch(error => {
+        document.getElementById("form-status").innerHTML = "<p style='color:red;'>Error: " + error.message + "</p>";
+      });
+    });
+</script>
 
 </body>
 
