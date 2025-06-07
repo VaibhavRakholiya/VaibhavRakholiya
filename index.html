@@ -741,8 +741,8 @@ What stood out the most was his ability to architect clean, modular systems — 
     </section>End Blog Section -->
 
     <!-- ======= Contact Section ======= -->
-    <!-- <section id="contact" class="paralax-mf footer-paralax bg-image sect-mt4 route" style="background-image: url(assets/img/overlay-bg.jpg)"> -->
-      <!-- <div class="overlay-mf"></div>
+    <section id="contact" class="paralax-mf footer-paralax bg-image sect-mt4 route" style="background-image: url(assets/img/overlay-bg.jpg)">
+      <div class="overlay-mf"></div>
       <div class="container">
         <div class="row">
           <div class="col-sm-12">
@@ -828,8 +828,9 @@ What stood out the most was his ability to architect clean, modular systems — 
             </div>
           </div>
         </div>
-      </div>  -->
-    <!-- </section> End Contact Section -->
+      </div> 
+    </section> 
+    <!-- End Contact Section -->
 
   </main><!-- End #main -->
 
@@ -906,6 +907,18 @@ What stood out the most was his ability to architect clean, modular systems — 
         document.getElementById("form-status").innerHTML = "<p style='color:red;'>Error: " + error.message + "</p>";
       });
     });
+</script>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const shouldHide = params.get('hideSection');
+
+  // if (shouldHide === 'true') {
+    const section = document.getElementById('contact');
+    if (section) {
+      section.style.display = 'none';
+    }
+  // }
 </script>
 
 </body>
