@@ -1,0 +1,198 @@
+/* Updated Testimonial Styles */
+.testimonials {
+    padding: 80px 0; /* Increased padding */
+    background-color: var(--light-color);
+}
+
+.testimonials .section-subtitle {
+    text-align: center;
+    color: var(--grey-color);
+    font-size: 1.2rem;
+    margin-top: -20px; 
+    margin-bottom: 40px;
+    font-weight: 400;
+}
+
+.testimonials-slider {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    min-height: auto;
+    padding: 0 20px; /* Added horizontal padding */
+}
+
+.testimonial-item {
+    background-color: var(--white-color);
+    border-radius: 15px;
+    padding: 60px 50px; /* Increased padding */
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transform: translateX(50px);
+    display: none;
+}
+
+.testimonial-item.active {
+    opacity: 1;
+    transform: translateX(0);
+    display: block;
+}
+
+.quote {
+    font-size: 3rem; /* Increased size */
+    color: var(--primary-color);
+    margin-bottom: 25px; /* Increased spacing */
+}
+
+.testimonial-item p {
+    font-size: 1.35rem; /* Increased font size */
+    color: #555; /* Darker for better contrast */
+    margin-bottom: 40px; /* More space below the text */
+    line-height: 1.7; /* Increased line height */
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px; /* Added horizontal padding */
+}
+
+.client-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px; /* Added top margin */
+}
+
+.client-img {
+    width: 80px; /* Increased size */
+    height: 80px; /* Increased size */
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white-color);
+    font-size: 1.5rem; /* Increased font size */
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(90, 74, 244, 0.3); /* Added shadow */
+}
+
+.client-details h4 {
+    font-size: 1.5rem; /* Increased font size */
+    color: var(--dark-color);
+    margin-bottom: 5px;
+}
+
+.client-details p {
+    font-size: 1.2rem; /* Increased font size */
+    color: var(--grey-color);
+    margin: 0;
+}
+
+.testimonial-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 320px; /* Adjusted for larger content */
+    gap: 30px; /* Increased spacing between controls */
+    padding: 20px 0; /* Added vertical padding */
+}
+
+.prev-btn, .next-btn {
+    width: 60px; /* Increased size */
+    height: 60px; /* Increased size */
+    border-radius: 50%;
+    background-color: var(--white-color);
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: var(--box-shadow);
+    font-size: 1.2rem; /* Increased icon size */
+}
+
+.prev-btn:hover, .next-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(90, 74, 244, 0.25);
+}
+
+.dots {
+    display: flex;
+    gap: 15px; /* Increased gap between dots */
+    margin: 0 20px; /* Added horizontal margin */
+}
+
+.dot {
+    width: 15px; /* Increased size */
+    height: 15px; /* Increased size */
+    border-radius: 50%;
+    background-color: var(--grey-color);
+    cursor: pointer;
+    transition: var(--transition);
+    opacity: 0.6; /* Added opacity for inactive dots */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Added subtle shadow */
+}
+
+.dot.active {
+    background-color: var(--primary-color);
+    transform: scale(1.5); /* Increased scale */
+    opacity: 1; /* Full opacity for active dot */
+    box-shadow: 0 3px 8px rgba(90, 74, 244, 0.4); /* Enhanced shadow */
+}
+
+/* Responsive styles for testimonials */
+@media screen and (max-width: 768px) {
+    .testimonial-item {
+        padding: 40px 30px; /* Adjusted padding for mobile */
+    }
+    
+    .testimonial-item p {
+        font-size: 1.2rem;
+        padding: 0 10px; /* Reduced padding on small screens */
+    }
+    
+    .quote {
+        font-size: 2.5rem; /* Reduced size on mobile */
+    }
+    
+    .testimonial-controls {
+        margin-top: 350px; /* Adjusted for mobile */
+        gap: 20px; /* Reduced gap on mobile */
+    }
+    
+    .prev-btn, .next-btn {
+        width: 50px; /* Adjusted for mobile */
+        height: 50px; /* Adjusted for mobile */
+    }
+    
+    .dot {
+        width: 12px; /* Adjusted for mobile */
+        height: 12px; /* Adjusted for mobile */
+    }
+}
+
+/* Underline style update for testimonials section */
+.testimonials .underline {
+    margin-bottom: 40px; /* Increased spacing */
+    height: 5px; /* Thicker underline */
+    width: 100px; /* Wider underline */
+}
+
+/* Make section header more compact */
+.testimonials .section-header {
+    margin-bottom: 50px; /* Increased from 40px */
+}
+
+.testimonials .section-header h2 {
+    font-size: 3rem; /* Larger title */
+    margin-bottom: 20px; /* More space below the title */
+}
