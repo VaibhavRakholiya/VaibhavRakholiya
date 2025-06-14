@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Auto slide
-    let slideInterval = setInterval(nextSlide, 5000);
+    let slideInterval = setInterval(nextSlide, 10000);
     
     // Pause auto-slide on interaction
     const sliderElements = [prevBtn, nextBtn, ...dots];
@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         
         element.addEventListener('mouseleave', () => {
-            slideInterval = setInterval(nextSlide, 5000);
+            slideInterval = setInterval(nextSlide, 10000);
         });
     });
     
