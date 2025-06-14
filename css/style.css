@@ -311,6 +311,7 @@ header .container {
     border-radius: 50%;
     background-color: rgba(90, 74, 244, 0.1);
     display: flex;
+    border: 4px solid rgba(91, 74, 244, 0.25); /* Adjust color and width as needed */
     justify-content: center;
     align-items: center;
     position: relative;
