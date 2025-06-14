@@ -142,6 +142,9 @@ document.addEventListener('DOMContentLoaded', function() {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
             
+            const form = e.target;
+            const data = new FormData(form);
+            
             // Get form values
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
@@ -153,10 +156,28 @@ document.addEventListener('DOMContentLoaded', function() {
                 alert('Please fill in all fields');
                 return;
             }
+
+             fetch("https://formsubmit.co/rakholiyavaibhav@gmail.com", 
+                {
+                    method: "POST",
+                    body: data,
+                })
+                .then(response => {
+                    if (response.ok) 
+                    {
+                        alert('Your message has been sent successfully! Thank you for contacting me.');
+                    // form.reset();
+                    } else 
+                    {
+                        
+                    }
+                })
+                .catch(error => {
+                    // document.getElementById("form-status").innerHTML = "<p style='color:red;'>Error: " + error.message + "</p>";
+                });
             
             // Here you would typically send the form data to a server
             // For demonstration, we'll just show a success message
-            alert('Your message has been sent successfully!');
             
             // Reset the form
             contactForm.reset();
