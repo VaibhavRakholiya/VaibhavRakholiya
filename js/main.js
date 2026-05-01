@@ -220,31 +220,98 @@ window.addEventListener('load', () => {
     });
 });
 
-// ============= Type Animation Effect =============
-// This function creates a typing effect for specified elements
-function typeAnimation(element, text, speed) {
-    let i = 0;
-    element.innerHTML = '';
-    
-    function typing() {
-        if (i < text.length) {
-            element.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(typing, speed);
+// ============= Looping Role Typer =============
+const roleTyper = document.getElementById('roleTyper');
+if (roleTyper) {
+    const roles = [
+        'Unity Games',
+        'AR / VR Worlds',
+        'Multiplayer Arenas',
+        'Hyper-Casual Hits',
+        'Immersive XR'
+    ];
+    let roleIdx = 0;
+    let charIdx = 0;
+    let deleting = false;
+
+    function tick() {
+        const current = roles[roleIdx];
+        roleTyper.textContent = current.substring(0, charIdx);
+
+        if (!deleting && charIdx < current.length) {
+            charIdx++;
+            setTimeout(tick, 75);
+        } else if (!deleting && charIdx === current.length) {
+            deleting = true;
+            setTimeout(tick, 1600);
+        } else if (deleting && charIdx > 0) {
+            charIdx--;
+            setTimeout(tick, 35);
+        } else {
+            deleting = false;
+            roleIdx = (roleIdx + 1) % roles.length;
+            setTimeout(tick, 250);
         }
     }
-    
-    typing();
+    setTimeout(tick, 600);
 }
 
-// Apply typing effect to the hero subtitle if needed
-const heroSubtitle = document.querySelector('.hero-text h3');
-if (heroSubtitle) {
-    window.addEventListener('load', () => {
-        setTimeout(() => {
-            typeAnimation(heroSubtitle, heroSubtitle.textContent, 100);
-        }, 1000);
-    });
+// ============= Scroll Progress Bar =============
+const scrollProgress = document.getElementById('scrollProgress');
+if (scrollProgress) {
+    const updateProgress = () => {
+        const h = document.documentElement;
+        const scrolled = h.scrollTop;
+        const height = h.scrollHeight - h.clientHeight;
+        const pct = height > 0 ? (scrolled / height) * 100 : 0;
+        scrollProgress.style.width = pct + '%';
+    };
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+}
+
+// ============= Reveal on Scroll =============
+const revealEls = document.querySelectorAll('.reveal');
+if (revealEls.length) {
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => revealObserver.observe(el));
+}
+
+// ============= Animated Counters =============
+const counters = document.querySelectorAll('.stat-number[data-count]');
+if (counters.length) {
+    const animateCount = (el) => {
+        const target = parseInt(el.dataset.count, 10) || 0;
+        const suffix = el.dataset.suffix || '';
+        const duration = 1600;
+        const start = performance.now();
+        const step = (now) => {
+            const t = Math.min(1, (now - start) / duration);
+            // ease-out cubic
+            const eased = 1 - Math.pow(1 - t, 3);
+            const value = Math.floor(target * eased);
+            el.textContent = value + suffix;
+            if (t < 1) requestAnimationFrame(step);
+            else el.textContent = target + suffix;
+        };
+        requestAnimationFrame(step);
+    };
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCount(entry.target);
+                counterObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.4 });
+    counters.forEach(el => counterObserver.observe(el));
 }
 
 // ============= Skill Animation =============

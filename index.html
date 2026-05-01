@@ -4,28 +4,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vaibhav Rakholiya - Unity Game Developer</title>
+    <meta name="description" content="Vaibhav Rakholiya — Unity Game Developer, AR/VR Expert, and UI/UX Specialist. Top Rated Upwork freelancer with 1000+ hours and a 100% job success rate.">
+    <title>Vaibhav Rakholiya — Unity Game Developer Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/services.css">
     <link rel="stylesheet" href="css/testimonials.css">
-    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
-    <!-- Header/Navigation -->
+    <!-- Scroll progress bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Header / Navigation -->
     <header>
         <div class="container">
-            <div class="logo">
-                <h1>Vaibhav <span>Rakholiya</span></h1>
+            <div class="header-profile">
+                <div class="profile-image">
+                    <img src="images/Profile.jpg" alt="Vaibhav Rakholiya">
+                </div>
+                <div class="logo">
+                    <h1>Vaibhav <span>Rakholiya</span></h1>
+                </div>
             </div>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#about">About</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
                 <div class="hamburger">
                     <span></span>
@@ -36,310 +49,302 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <div class="hero-text">
+                <div class="hero-text reveal">
+                    <span class="section-eyebrow">Available for new projects</span>
                     <h2>Hello, I'm</h2>
                     <h1>Vaibhav Rakholiya</h1>
-                    <h3>Unity Game Developer | AR/VR Expert | UI/UX Specialist</h3>
-                    <p>Top Rated Upwork Freelancer | 100% Job Success Ratio | 1000+ Hours Worked</p>
-                    <p>Transforming gaming visions into reality with custom, optimized, and immersive experiences.</p>
+                    <h3>I build <span class="typer" id="roleTyper">Unity Games</span></h3>
+                    <p>Top Rated Upwork freelancer with 1000+ hours and a 100% job success score. Crafting custom, optimized, and immersive games and XR experiences.</p>
+                    <p>From hyper-casual hits to multiplayer arenas and AR/VR worlds — I turn gameplay ideas into shipped products.</p>
                     <div class="hero-cta">
-                        <a href="#projects" class="btn primary-btn">View Work</a>
-                        <a href="#contact" class="btn secondary-btn">Get in touch</a>
+                        <a href="#projects" class="btn primary-btn"><i class="fas fa-rocket"></i> View Work</a>
+                        <a href="#contact" class="btn secondary-btn"><i class="fas fa-paper-plane"></i> Get in Touch</a>
+                    </div>
+                    <div class="hero-socials">
+                        <a href="mailto:rakholiyavaibhav@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                        <a href="https://www.upwork.com/" target="_blank" rel="noopener" aria-label="Upwork"><i class="fas fa-briefcase"></i></a>
+                        <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
-                <div class="hero-image">
+                <div class="hero-image reveal">
                     <div class="image-placeholder">
                         <img src="images/Profile.jpg" alt="Vaibhav Rakholiya">
                     </div>
+                    <div class="tech-badge b1"><i class="fab fa-unity"></i> Unity</div>
+                    <div class="tech-badge b2"><i class="fas fa-vr-cardboard"></i> AR / VR</div>
+                    <div class="tech-badge b3"><i class="fas fa-code"></i> C#</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- Stats -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid reveal">
+                <div class="stat-item">
+                    <div class="stat-number" data-count="1000" data-suffix="+">0+</div>
+                    <div class="stat-label">Hours Worked</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="100" data-suffix="%">0%</div>
+                    <div class="stat-label">Job Success</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="50" data-suffix="+">0+</div>
+                    <div class="stat-label">Games Shipped</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="5" data-suffix="+">0+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-eyebrow">About me</span>
+                <h2>Game-Dev with a Builder's Mindset</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="about-grid">
+                <div class="about-text reveal">
+                    <p>I'm a Unity Game Developer specializing in mobile, multiplayer, and AR/VR experiences. Over the past 5+ years I've shipped 50+ titles spanning hyper-casual, casino, sports, and immersive XR — with a focus on clean architecture, performance, and a feel-good moment-to-moment loop.</p>
+                    <p>I work end-to-end: from prototyping and gameplay scripting in C#, to networking with Photon/Mirror, to optimization, store deployment, and live-ops. I love collaborating with designers and product folks to push pixels and frames in equal measure.</p>
+                    <div class="about-chips">
+                        <span>Top Rated on Upwork</span>
+                        <span>Unity 2D / 3D</span>
+                        <span>Photon &amp; Mirror</span>
+                        <span>AR Core / AR Kit</span>
+                        <span>Meta Quest</span>
+                        <span>Web3 / NFT</span>
+                    </div>
+                </div>
+                <div class="about-card reveal">
+                    <h4>What I bring to your project</h4>
+                    <ul class="about-list">
+                        <li><i class="fas fa-check"></i> Clean, modular C# architecture that's easy to iterate on.</li>
+                        <li><i class="fas fa-check"></i> Buttery 60fps performance on mid-range Android devices.</li>
+                        <li><i class="fas fa-check"></i> Robust multiplayer with rollback-friendly logic.</li>
+                        <li><i class="fas fa-check"></i> XR-ready builds for Meta Quest, ARCore and ARKit.</li>
+                        <li><i class="fas fa-check"></i> Clear, async-first communication and on-time delivery.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
     <section id="skills" class="skills">
         <div class="container">
-            <div class="section-header">
-                <h2>My Skills</h2>
+            <div class="section-header reveal">
+                <span class="section-eyebrow">Tech stack</span>
+                <h2>Skills &amp; Tools</h2>
                 <div class="underline"></div>
             </div>
             <div class="skills-content">
-                <div class="skills-category">
+                <div class="skills-category reveal">
                     <h3>Game Development</h3>
                     <div class="skills-grid">
-                        <div class="skill-item">
-                            <i class="fab fa-unity"></i>
-                            <h4>Unity</h4>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-code"></i>
-                            <h4>C#</h4>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-gamepad"></i>
-                            <h4>Game Design</h4>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-users"></i>
-                            <h4>Multiplayer</h4>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-mobile-alt"></i>
-                            <h4>Mobile Games</h4>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-cubes"></i>
-                            <h4>3D Modeling</h4>
-                        </div>
+                        <div class="skill-item"><i class="fab fa-unity"></i><h4>Unity</h4></div>
+                        <div class="skill-item"><i class="fas fa-code"></i><h4>C#</h4></div>
+                        <div class="skill-item"><i class="fas fa-gamepad"></i><h4>Game Design</h4></div>
+                        <div class="skill-item"><i class="fas fa-users"></i><h4>Multiplayer</h4></div>
+                        <div class="skill-item"><i class="fas fa-mobile-alt"></i><h4>Mobile Games</h4></div>
+                        <div class="skill-item"><i class="fas fa-cubes"></i><h4>3D Modeling</h4></div>
                     </div>
                 </div>
-                <div class="skills-category">
-                    <h3>AR/VR Development</h3>
+                <div class="skills-category reveal">
+                    <h3>AR / VR Development</h3>
                     <div class="skills-grid">
-                        <div class="skill-item">
-                            <i class="fas fa-vr-cardboard"></i>
-                            <h4>Virtual Reality</h4>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-glasses"></i>
-                            <h4>Augmented Reality</h4>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-headset"></i>
-                            <h4>Oculus/Meta</h4>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-tablet-alt"></i>
-                            <h4>ARKit/ARCore</h4>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-cube"></i>
-                            <h4>Spatial Computing</h4>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-project-diagram"></i>
-                            <h4>XR Integration</h4>
-                        </div>
+                        <div class="skill-item"><i class="fas fa-vr-cardboard"></i><h4>Virtual Reality</h4></div>
+                        <div class="skill-item"><i class="fas fa-glasses"></i><h4>Augmented Reality</h4></div>
+                        <div class="skill-item"><i class="fas fa-headset"></i><h4>Meta Quest</h4></div>
+                        <div class="skill-item"><i class="fas fa-tablet-alt"></i><h4>ARKit / ARCore</h4></div>
+                        <div class="skill-item"><i class="fas fa-cube"></i><h4>Spatial Computing</h4></div>
+                        <div class="skill-item"><i class="fas fa-project-diagram"></i><h4>XR Integration</h4></div>
                     </div>
                 </div>
-                <div class="skills-category">
-                    <h3>Other Skills</h3>
+                <div class="skills-category reveal">
+                    <h3>Engineering &amp; Tools</h3>
                     <div class="skills-grid">
-                        <div class="skill-item">
-                            <i class="fas fa-palette"></i>
-                            <h4>UI/UX Design</h4>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-git-alt"></i>
-                            <h4>Git</h4>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-cogs"></i>
-                            <h4>Performance Optimization</h4>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-code-branch"></i>
-                            <h4>CI/CD</h4>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-network-wired"></i>
-                            <h4>Photon/Mirror</h4>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-cube"></i>
-                            <h4>Blockchain/NFT</h4>
-                        </div>
+                        <div class="skill-item"><i class="fas fa-palette"></i><h4>UI / UX Design</h4></div>
+                        <div class="skill-item"><i class="fab fa-git-alt"></i><h4>Git</h4></div>
+                        <div class="skill-item"><i class="fas fa-cogs"></i><h4>Optimization</h4></div>
+                        <div class="skill-item"><i class="fas fa-code-branch"></i><h4>CI / CD</h4></div>
+                        <div class="skill-item"><i class="fas fa-network-wired"></i><h4>Photon / Mirror</h4></div>
+                        <div class="skill-item"><i class="fas fa-cube"></i><h4>Blockchain / NFT</h4></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- Featured Projects -->
     <section id="projects" class="projects">
         <div class="container">
-            <div class="section-header">
-                <h2>Featured Projects</h2>
+            <div class="section-header reveal">
+                <span class="section-eyebrow">Featured work</span>
+                <h2>Selected Projects</h2>
                 <div class="underline"></div>
             </div>
 
             <div class="projects-grid">
-                <!-- Project 1: Beat Smash EDM Rush Music Game -->
-                <div class="project-item">
+                <div class="project-item reveal">
                     <img src="images/Project8.png" alt="Beat Smash EDM Rush Music Game">
                     <div class="project-info">
-                        <h3>Beat Smash EDM Rush Music Game</h3>
-                        <!-- <p>Poker Payday is a strategic card-clearing game where players form real poker hands to eliminate cards, manage the grid, and earn bonus rewards through skillful planning.</p> -->
+                        <h3>Beat Smash — EDM Rush</h3>
                         <div class="project-tech">
-                            <span>Unity</span>
-                            <span>C#</span>
-                            <span>Music Game</span>
-                            <span>EDM</span>
+                            <span>Unity</span><span>C#</span><span>Music</span><span>EDM</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://play.google.com/store/apps/details?id=com.V.R.Developers.TunnelBall&hl=en-IN"
-                                class="btn small-btn" target="_blank">Play Store</a>
-                            <!-- <a href="#" class="btn small-btn github-btn">View Code</a> -->
+                            <a href="https://play.google.com/store/apps/details?id=com.V.R.Developers.TunnelBall&hl=en-IN" class="btn small-btn" target="_blank" rel="noopener"><i class="fab fa-google-play"></i> Play Store</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 2: Knock Down Slingshot Ball Game -->
-                <div class="project-item">
+                <div class="project-item reveal">
                     <img src="images/Project2.png" alt="Knock Down Slingshot Ball Game">
                     <div class="project-info">
-                        <h3>Knock Down Slingshot Ball Game</h3>
-                        <!-- <p>A physics-based puzzle game where players draw lines or shapes to protect dogs from threats. Features hundreds of challenging levels.</p> -->
+                        <h3>Knock Down Slingshot</h3>
                         <div class="project-tech">
-                            <span>Unity</span>
-                            <span>C#</span>
-                            <span>Shooting</span>
-                            <span>Casual</span>
-                            <span>Puzzle</span>
+                            <span>Unity</span><span>C#</span><span>Shooting</span><span>Casual</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://play.google.com/store/apps/details?id=com.hit.down.slinghot.shooting&hl=en-IN"
-                                class="btn small-btn" target="_blank">Play Store</a>
-                            <!-- <a href="#" class="btn small-btn github-btn"
-                            target="_blank">App Store</a> -->
+                            <a href="https://play.google.com/store/apps/details?id=com.hit.down.slinghot.shooting&hl=en-IN" class="btn small-btn" target="_blank" rel="noopener"><i class="fab fa-google-play"></i> Play Store</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 3: Fruit Merge Suika Offline Game -->
-                <div class="project-item">
+                <div class="project-item reveal">
                     <img src="images/Project3.png" alt="Fruit Merge Suika Offline Game">
                     <div class="project-info">
-                        <h3>Fruit Merge Suika Offline Game</h3>
-                        <!-- <p>A fresh twist on word puzzles combining classic word search, crossword, and trivia gameplay with diverse clue formats.</p> -->
+                        <h3>Fruit Merge — Suika</h3>
                         <div class="project-tech">
-                            <span>Unity</span>
-                            <span>C#</span>
-                            <span>Hyper Casual</span>
-                            <span>Suika</span>
-                            <span>Merge</span>
+                            <span>Unity</span><span>C#</span><span>Hyper Casual</span><span>Merge</span>
                         </div>
                         <div class="project-links">
-                            <!-- <a href="https://play.google.com/store/apps/details?id=com.randomlogicgames.wordblox"
-                                class="btn small-btn" target="_blank">Play Store</a> -->
-                            <!-- <a href="https://apps.apple.com/in/app/wordblox-word-puzzles/id1569467386"
-                                class="btn small-btn github-btn" target="_blank">App Store</a> -->
+                            <a href="projects.html" class="btn small-btn"><i class="fas fa-arrow-right"></i> Learn More</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 6: Nuts Sort Master Color Sorting -->
-                <div class="project-item">
+                <div class="project-item reveal">
                     <img src="images/Project06.png" alt="Nuts Sort Master Color Sorting">
                     <div class="project-info">
-                        <h3>Nuts Sort Master Color Sorting</h3>
-                        <!-- <p>An engaging twist on classic block puzzle games featuring 14 levels and over 1,000 puzzles with a relaxing gameplay experience.</p> -->
+                        <h3>Nuts Sort Master</h3>
                         <div class="project-tech">
-                            <span>Unity</span>
-                            <span>C#</span>
-                            <span>2D</span>
-                            <span>Hyper Casual</span>
-                            <span>Sort</span>
+                            <span>Unity</span><span>C#</span><span>2D</span><span>Sort</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://play.google.com/store/apps/details?id=com.V.R.Developers.NutsSort&hl=en-IN"
-                                class="btn small-btn" target="_blank">Play Store</a>
-                            <!-- <a href="https://apps.apple.com/in/app/hexa-buzzle/id1369821512"
-                                class="btn small-btn github-btn" target="_blank">App Store</a> -->
+                            <a href="https://play.google.com/store/apps/details?id=com.V.R.Developers.NutsSort&hl=en-IN" class="btn small-btn" target="_blank" rel="noopener"><i class="fab fa-google-play"></i> Play Store</a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="projects-cta">
-                <a href="projects.html" class="btn primary-btn view-all">View All Projects</a>
+            <div class="projects-cta reveal">
+                <a href="projects.html" class="btn primary-btn view-all"><i class="fas fa-th-large"></i> View All Projects</a>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- Experience -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-eyebrow">Journey</span>
+                <h2>Experience</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item reveal">
+                    <div class="role">Senior Unity Developer</div>
+                    <div class="company">Suryavanshi Ventures</div>
+                    <div class="period">2024 — Present</div>
+                    <p>Architecting interactive 3D environments and Metaverse experiences. Building clean, modular systems that make iteration fast across AR / VR pipelines.</p>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="role">Unity Game Developer</div>
+                    <div class="company">TST Technologies</div>
+                    <div class="period">2022 — 2024</div>
+                    <p>Built immersive game environments and led optimization passes across multiple shipped titles. Collaborated with designers and QA to deliver high-quality work on tight cycles.</p>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="role">Freelance Game Developer</div>
+                    <div class="company">Upwork — Top Rated</div>
+                    <div class="period">2020 — Present</div>
+                    <p>1000+ hours and a 100% Job Success score across multiplayer, real-money gaming, and hyper-casual projects with clients worldwide.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
     <section id="services" class="services">
         <div class="container">
-            <div class="section-header">
-                <h2>My Services</h2>
+            <div class="section-header reveal">
+                <span class="section-eyebrow">What I do</span>
+                <h2>Services</h2>
                 <div class="underline"></div>
             </div>
             <div class="services-grid">
-                <div class="service-item">
-                    <div class="service-icon">
-                        <i class="fas fa-gamepad"></i>
-                    </div>
+                <div class="service-item reveal">
+                    <div class="service-icon"><i class="fas fa-gamepad"></i></div>
                     <h3>Custom Game Development</h3>
-                    <p>Crafting unforgettable games from scratch, ensuring immersive gameplay experiences tailored
-                        specifically to your audience.</p>
+                    <p>Crafting unforgettable games from scratch — immersive gameplay tailored to your audience and platform.</p>
                 </div>
-                <div class="service-item">
-                    <div class="service-icon">
-                        <i class="fas fa-vr-cardboard"></i>
-                    </div>
-                    <h3>AR/VR Development</h3>
-                    <p>Creating immersive augmented and virtual reality experiences for entertainment, education, and
-                        business applications.</p>
+                <div class="service-item reveal">
+                    <div class="service-icon"><i class="fas fa-vr-cardboard"></i></div>
+                    <h3>AR / VR Development</h3>
+                    <p>Immersive AR &amp; VR experiences for entertainment, education, and business — Quest, ARCore, ARKit.</p>
                 </div>
-                <div class="service-item">
-                    <div class="service-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
+                <div class="service-item reveal">
+                    <div class="service-icon"><i class="fas fa-users"></i></div>
                     <h3>Multiplayer Games</h3>
-                    <p>Developing robust multiplayer systems using Photon and Mirror to create engaging social gaming
-                        experiences.</p>
+                    <p>Robust real-time multiplayer using Photon and Mirror to power engaging social gaming experiences.</p>
                 </div>
-                <div class="service-item">
-                    <div class="service-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
+                <div class="service-item reveal">
+                    <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
                     <h3>Mobile Game Development</h3>
-                    <p>Building optimized games for iOS and Android platforms, from hyper-casual to complex strategy
-                        games.</p>
+                    <p>Optimized titles for Android and iOS — from hyper-casual to complex strategy, store-ready and live-op friendly.</p>
                 </div>
-                <div class="service-item">
-                    <div class="service-icon">
-                        <i class="fas fa-cogs"></i>
-                    </div>
-                    <h3>Bug Fixing & Optimization</h3>
-                    <p>Meticulously debugging and enhancing your game, ensuring a smooth, top-quality gaming experience.
-                    </p>
+                <div class="service-item reveal">
+                    <div class="service-icon"><i class="fas fa-cogs"></i></div>
+                    <h3>Bug Fixing &amp; Optimization</h3>
+                    <p>Meticulous debugging and performance passes — smooth frame-times, smaller builds, happier players.</p>
                 </div>
-                <div class="service-item">
-                    <div class="service-icon">
-                        <i class="fas fa-headset"></i>
-                    </div>
-                    <h3>Consulting & Support</h3>
-                    <p>Providing expert advice and ongoing support to help your gaming projects succeed in the
-                        competitive market.</p>
+                <div class="service-item reveal">
+                    <div class="service-icon"><i class="fas fa-headset"></i></div>
+                    <h3>Consulting &amp; Support</h3>
+                    <p>Expert guidance and ongoing support to help your gaming projects succeed in a competitive market.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
+    <!-- Testimonials -->
     <section id="testimonials" class="testimonials">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header reveal">
+                <span class="section-eyebrow">Kind words</span>
                 <h2>Client Testimonials</h2>
                 <div class="underline"></div>
-
             </div>
             <div class="testimonials-slider">
-                <!-- Testimonial 1 -->
                 <div class="testimonial-item">
-                    <div class="quote">
-                        <i class="fas fa-quote-left"></i>
-                    </div>
+                    <div class="quote"><i class="fas fa-quote-left"></i></div>
                     <p>Great to work with. Looking forward to working with him again on future projects.</p>
                     <div class="client-info">
-                        <div class="client-img">
-                            <span>RC</span>
-                        </div>
+                        <div class="client-img"><span>RC</span></div>
                         <div class="client-details">
                             <h4>Ryan Courtade</h4>
                             <p>LUX Mobile Studios</p>
@@ -347,16 +352,11 @@
                     </div>
                 </div>
 
-                <!-- Testimonial 2 -->
                 <div class="testimonial-item">
-                    <div class="quote">
-                        <i class="fas fa-quote-left"></i>
-                    </div>
-                    <p>Vaibhav Rakholiya is a versatile Unity Game Developer delivering immersive, high-performance games.His skills in VR/AR, multiplayer systems, and real-money gaming drive innovation and engagement. Vaibhav creates scalable backend systems using Node.js and MongoDB for seamless gameplay. With a focus on gameplay balance, monetization strategies, and user acquisition, he combines technical depth with creative vision.</p>
+                    <div class="quote"><i class="fas fa-quote-left"></i></div>
+                    <p>Vaibhav is a versatile Unity Game Developer delivering immersive, high-performance games. His skills in VR/AR, multiplayer systems, and real-money gaming drive innovation and engagement. He builds scalable backend systems with Node.js and MongoDB for seamless gameplay — combining technical depth with creative vision.</p>
                     <div class="client-info">
-                        <div class="client-img">
-                            <span>CK</span>
-                        </div>
+                        <div class="client-img"><span>CK</span></div>
                         <div class="client-details">
                             <h4>Chandan Kumar</h4>
                             <p>NodeWap Technologies</p>
@@ -364,18 +364,11 @@
                     </div>
                 </div>
 
-                <!-- Testimonial 3 -->
                 <div class="testimonial-item">
-                    <div class="quote">
-                        <i class="fas fa-quote-left"></i>
-                    </div>
-                    <p>Vaibhav was a valuable part of our team, Especially in building immersive game environments and optimizing performance, were truly impressive.
-Beyond the code, what really stood out was his discipline, calm attitude, and eagerness to learn. He maintained excellent communication, collaborated seamlessly with designers and testers, and always delivered high-quality work.
-<br>I’m confident Vaibhav will continue to bring great value wherever he works next.</p>
+                    <div class="quote"><i class="fas fa-quote-left"></i></div>
+                    <p>Vaibhav was a valuable part of our team — especially in building immersive game environments and optimizing performance. Beyond the code, his discipline, calm attitude, and eagerness to learn really stood out. Excellent communication and consistently high-quality work.</p>
                     <div class="client-info">
-                        <div class="client-img">
-                            <span>PM</span>
-                        </div>
+                        <div class="client-img"><span>PM</span></div>
                         <div class="client-details">
                             <h4>Parth Makwana</h4>
                             <p>TST Technologies</p>
@@ -383,18 +376,11 @@ Beyond the code, what really stood out was his discipline, calm attitude, and ea
                     </div>
                 </div>
 
-                <!-- Testimonial 4 -->
                 <div class="testimonial-item">
-                    <div class="quote">
-                        <i class="fas fa-quote-left"></i>
-                    </div>
-                    <p>Vaibhav brought a deep understanding of Unity 3D development to the table and his technical expertise played a critical role in shaping the immersive experiences we aimed to deliver.
-From building interactive 3D environments to optimizing performance across platforms.What stood out the most was his ability to architect clean, modular systems which made iteration fast and development seamless.
-<br>Vaibhav is not just a Unity developer - he’s a builder with a strong technical core, and I’d highly recommend him for any project involving 3D, AR/VR, or the Metaverse.</p>
+                    <div class="quote"><i class="fas fa-quote-left"></i></div>
+                    <p>Vaibhav brought a deep understanding of Unity 3D development — his technical expertise played a critical role in shaping the immersive experiences we aimed to deliver. Clean, modular systems made iteration fast and development seamless. Highly recommended for any 3D, AR/VR or Metaverse project.</p>
                     <div class="client-info">
-                        <div class="client-img">
-                            <span>AS</span>
-                        </div>
+                        <div class="client-img"><span>AS</span></div>
                         <div class="client-details">
                             <h4>Akash Suryavanshi</h4>
                             <p>Suryavanshi Ventures</p>
@@ -403,31 +389,30 @@ From building interactive 3D environments to optimizing performance across platf
                 </div>
             </div>
             <div class="testimonial-controls">
-                <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+                <button class="prev-btn" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
                 <div class="dots">
                     <span class="dot active" title="Testimonial 1"></span>
                     <span class="dot" title="Testimonial 2"></span>
                     <span class="dot" title="Testimonial 3"></span>
                     <span class="dot" title="Testimonial 4"></span>
-                    <span class="dot" title="Testimonial 5"></span>
                 </div>
-                <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+                <button class="next-btn" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact -->
     <section id="contact" class="contact">
         <div class="container">
-            <div class="section-header">
-                <h2>Get In Touch</h2>
+            <div class="section-header reveal">
+                <span class="section-eyebrow">Contact</span>
+                <h2>Let's Build Something</h2>
                 <div class="underline"></div>
             </div>
             <div class="contact-content">
-                <div class="contact-info">
+                <div class="contact-info reveal">
                     <h3>Let's work together</h3>
-                    <p>Ready to transform your gaming vision into reality? I'm currently available for freelance work.
-                        If you have a project that needs some creative touch, I'd love to hear about it.</p>
+                    <p>Ready to transform your gaming vision into reality? I'm currently available for freelance work. If you have a project that needs a creative touch, I'd love to hear about it.</p>
                     <div class="contact-details">
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
@@ -439,31 +424,30 @@ From building interactive 3D environments to optimizing performance across platf
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Gujarat,India</span>
+                            <span>Gujarat, India</span>
                         </div>
                     </div>
                 </div>
-                <div class="contact-form">
+                <div class="contact-form reveal">
                     <form id="contactForm">
-                         <input type="hidden" name="_captcha" value="false">
-                       
+                        <input type="hidden" name="_captcha" value="false">
                         <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder=" " required>
                             <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required>
                         </div>
                         <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder=" " required>
                             <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
                         </div>
                         <div class="form-group">
+                            <input type="text" id="subject" name="subject" placeholder=" " required>
                             <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" required>
                         </div>
                         <div class="form-group">
+                            <textarea id="message" name="message" rows="5" placeholder=" " required></textarea>
                             <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
                         </div>
-                        <button type="submit" class="btn primary-btn">Send Message</button>
+                        <button type="submit" class="btn primary-btn"><i class="fas fa-paper-plane"></i> Send Message</button>
                     </form>
                 </div>
             </div>
@@ -479,33 +463,25 @@ From building interactive 3D environments to optimizing performance across platf
                 </div>
                 <div class="footer-links">
                     <a href="#home">Home</a>
+                    <a href="#about">About</a>
                     <a href="#skills">Skills</a>
                     <a href="#projects">Projects</a>
                     <a href="#services">Services</a>
-                    <a href="#testimonials">Testimonials</a>
+                    <a href="#contact">Contact</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Vaibhav Rakholiya. All Rights Reserved.</p>
+                <p>&copy; 2026 Vaibhav Rakholiya. Crafted with care.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
-    <a href="#home" class="back-to-top">
+    <a href="#home" class="back-to-top" aria-label="Back to top">
         <i class="fas fa-arrow-up"></i>
     </a>
 
-    <!-- JavaScript -->
     <script src="js/main.js"></script>
     <script src="js/testimonials.js"></script>
-    <script>
-        const element = document.getElementById('projects');
-         if (element) 
-         {
-            // element.style.display = 'none';
-         }
-    </script>
 </body>
 
 </html>
