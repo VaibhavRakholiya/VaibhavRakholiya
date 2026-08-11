@@ -296,11 +296,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 const roleTyper = document.getElementById('roleTyper');
 if (roleTyper) {
     const roles = [
-        'Unity Games',
-        'AR / VR Worlds',
-        'Multiplayer Arenas',
-        'Hyper-Casual Hits',
-        'Immersive XR'
+        'Software That Ships',
+        'Systems That Scale',
+        'Real-Time Multiplayer',
+        'AR / VR Products',
+        'Problems Other Devs Shelved'
     ];
 
     if (reduceMotion) {
