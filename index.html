@@ -8,6 +8,7 @@
     <meta name="description" content="Vaibhav Rakholiya — Unity Game Developer, AR/VR expert, and Top Rated Upwork freelancer. 1000+ hours, 100% job success, 50+ shipped games. Portfolio and contact.">
     <meta name="author" content="Vaibhav Rakholiya">
     <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#059669">
     <title>Vaibhav Rakholiya | Unity Game Developer &amp; AR/VR Portfolio</title>
     <link rel="canonical" href="https://vaibhavrakholiya.github.io/">
     <meta property="og:type" content="website">
@@ -66,6 +67,8 @@
 </head>
 
 <body>
+    <a href="#main" class="skip-link">Skip to content</a>
+
     <!-- Scroll progress bar -->
     <div class="scroll-progress" id="scrollProgress"></div>
 
@@ -74,14 +77,14 @@
         <div class="container">
             <div class="header-profile">
                 <div class="profile-image">
-                    <img src="images/Profile.jpg" alt="Vaibhav Rakholiya">
+                    <img src="images/Profile.jpg" alt="Vaibhav Rakholiya" width="42" height="42" fetchpriority="high">
                 </div>
                 <div class="logo">
                     <p class="logo-text">Vaibhav <span>Rakholiya</span></p>
                 </div>
             </div>
             <nav>
-                <ul class="nav-links">
+                <ul class="nav-links" id="primaryNav">
                     <li><a href="#home" class="active">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#skills">Skills</a></li>
@@ -90,23 +93,23 @@
                     <li><a href="#testimonials">Testimonials</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
-                <div class="hamburger">
+                <button type="button" class="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="primaryNav">
                     <span></span>
                     <span></span>
                     <span></span>
-                </div>
+                </button>
             </nav>
         </div>
     </header>
 
-    <main>
+    <main id="main">
     <!-- Hero -->
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text reveal">
                     <span class="section-eyebrow">Available for new projects</span>
-                    <h2>Hello, I'm</h2>
+                    <p class="hero-greeting">Hello, I'm</p>
                     <h1>Vaibhav Rakholiya</h1>
                     <h3>I build <span class="typer" id="roleTyper">Unity Games</span></h3>
                     <p>Top Rated Upwork freelancer with 1000+ hours and a 100% job success score. Crafting custom, optimized, and immersive games and XR experiences.</p>
@@ -124,7 +127,7 @@
                 </div>
                 <div class="hero-image reveal">
                     <div class="image-placeholder">
-                        <img src="images/Profile.jpg" alt="Vaibhav Rakholiya">
+                        <img src="images/Profile.jpg" alt="Vaibhav Rakholiya" width="420" height="420" fetchpriority="high">
                     </div>
                     <div class="tech-badge b1"><i class="fab fa-unity"></i> Unity</div>
                     <div class="tech-badge b2"><i class="fas fa-vr-cardboard"></i> AR / VR</div>
@@ -228,7 +231,7 @@
                 <div class="skills-category reveal">
                     <h3>Mobile Apps</h3>
                     <div class="skills-grid">
-                        <div class="skill-item"><span class="skill-icon-img" aria-hidden="true"><img src="images/flutter.svg" alt=""></span><h4>Flutter</h4></div>
+                        <div class="skill-item"><span class="skill-icon-img" aria-hidden="true"><img src="images/flutter.svg" alt="" width="20" height="20" loading="lazy" decoding="async"></span><h4>Flutter</h4></div>
                         <div class="skill-item"><i class="fab fa-android"></i><h4>Android</h4></div>
                         <div class="skill-item"><i class="fas fa-mobile-alt"></i><h4>Cross-Platform</h4></div>
                         <div class="skill-item"><i class="fas fa-wrench"></i><h4>Utility Apps</h4></div>
@@ -262,7 +265,7 @@
 
             <div class="projects-grid">
                 <div class="project-item reveal">
-                    <img src="images/Project51.png" alt="Beat Smash EDM Rush Music Game">
+                    <img src="images/Project51.png" alt="Beat Smash EDM Rush Music Game" width="640" height="400" loading="lazy" decoding="async">
                     <div class="project-info">
                         <h3>Beat Smash — EDM Rush</h3>
                         <div class="project-tech">
@@ -275,7 +278,7 @@
                 </div>
 
                 <div class="project-item reveal">
-                    <img src="images/Project49.png" alt="Fireworks Simulator and Prank">
+                    <img src="images/Project49.png" alt="Fireworks Simulator and Prank" width="640" height="400" loading="lazy" decoding="async">
                     <div class="project-info">
                         <h3>Fireworks Simulator &amp; Prank</h3>
                         <div class="project-tech">
@@ -288,7 +291,7 @@
                 </div>
 
                 <div class="project-item reveal">
-                    <img src="images/Project50.png" alt="Makeup and Dress Up Games">
+                    <img src="images/Project50.png" alt="Makeup and Dress Up Games" width="640" height="400" loading="lazy" decoding="async">
                     <div class="project-info">
                         <h3>Makeup &amp; Dress Up Games</h3>
                         <div class="project-tech">
@@ -301,7 +304,7 @@
                 </div>
 
                 <div class="project-item reveal">
-                    <img src="images/Project52.png" alt="Shoot Down Slingshot Game">
+                    <img src="images/Project52.png" alt="Shoot Down Slingshot Game" width="640" height="400" loading="lazy" decoding="async">
                     <div class="project-info">
                         <h3>Shoot Down</h3>
                         <div class="project-tech">
@@ -314,7 +317,7 @@
                 </div>
 
                 <div class="project-item reveal">
-                    <img src="images/Project43.png" alt="Blower Fan">
+                    <img src="images/Project43.png" alt="Blower Fan" width="640" height="400" loading="lazy" decoding="async">
                     <div class="project-info">
                         <h3>Blower Fan</h3>
                         <div class="project-tech">
@@ -327,7 +330,7 @@
                 </div>
 
                 <div class="project-item reveal">
-                    <img src="images/Project44.png" alt="Does He Really Like Me? Crush Test">
+                    <img src="images/Project44.png" alt="Does He Really Like Me? Crush Test" width="640" height="400" loading="lazy" decoding="async">
                     <div class="project-info">
                         <h3>Crush Test</h3>
                         <div class="project-tech">
@@ -340,7 +343,7 @@
                 </div>
 
                 <div class="project-item reveal">
-                    <img src="images/Project45.png" alt="Broken Video Repair App">
+                    <img src="images/Project45.png" alt="Broken Video Repair App" width="640" height="400" loading="lazy" decoding="async">
                     <div class="project-info">
                         <h3>Video Repair</h3>
                         <div class="project-tech">
@@ -353,7 +356,7 @@
                 </div>
 
                 <div class="project-item reveal">
-                    <img src="images/Project46.png" alt="PregnaTest Pregnancy Test App">
+                    <img src="images/Project46.png" alt="PregnaTest Pregnancy Test App" width="640" height="400" loading="lazy" decoding="async">
                     <div class="project-info">
                         <h3>PregnaTest</h3>
                         <div class="project-tech">
@@ -366,7 +369,7 @@
                 </div>
 
                 <div class="project-item reveal">
-                    <img src="images/Project47.png" alt="Big Font - Text Size Changer">
+                    <img src="images/Project47.png" alt="Big Font - Text Size Changer" width="640" height="400" loading="lazy" decoding="async">
                     <div class="project-info">
                         <h3>Big Font</h3>
                         <div class="project-tech">
@@ -379,7 +382,7 @@
                 </div>
 
                 <div class="project-item reveal">
-                    <img src="images/Project48.png" alt="Text Note to PDF Converter">
+                    <img src="images/Project48.png" alt="Text Note to PDF Converter" width="640" height="400" loading="lazy" decoding="async">
                     <div class="project-info">
                         <h3>Text Note to PDF</h3>
                         <div class="project-tech">
@@ -480,7 +483,7 @@
                 <h2>Client Testimonials</h2>
                 <div class="underline"></div>
             </div>
-            <div class="testimonials-slider">
+            <div class="testimonials-slider" role="group" aria-roledescription="carousel" aria-label="Client testimonials">
                 <div class="testimonial-item">
                     <div class="quote"><i class="fas fa-quote-left"></i></div>
                     <p>Great to work with. Looking forward to working with him again on future projects.</p>
@@ -532,10 +535,10 @@
             <div class="testimonial-controls">
                 <button class="prev-btn" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
                 <div class="dots">
-                    <span class="dot active" title="Testimonial 1"></span>
-                    <span class="dot" title="Testimonial 2"></span>
-                    <span class="dot" title="Testimonial 3"></span>
-                    <span class="dot" title="Testimonial 4"></span>
+                    <button type="button" class="dot active" aria-label="Testimonial 1"></button>
+                    <button type="button" class="dot" aria-label="Testimonial 2"></button>
+                    <button type="button" class="dot" aria-label="Testimonial 3"></button>
+                    <button type="button" class="dot" aria-label="Testimonial 4"></button>
                 </div>
                 <button class="next-btn" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
             </div>
@@ -570,14 +573,15 @@
                     </div>
                 </div>
                 <div class="contact-form reveal">
-                    <form id="contactForm">
+                    <form id="contactForm" novalidate>
                         <input type="hidden" name="_captcha" value="false">
+                        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
                         <div class="form-group">
-                            <input type="text" id="name" name="name" placeholder=" " required>
+                            <input type="text" id="name" name="name" placeholder=" " autocomplete="name" required>
                             <label for="name">Name</label>
                         </div>
                         <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder=" " required>
+                            <input type="email" id="email" name="email" placeholder=" " autocomplete="email" required>
                             <label for="email">Email</label>
                         </div>
                         <div class="form-group">
@@ -589,6 +593,7 @@
                             <label for="message">Message</label>
                         </div>
                         <button type="submit" class="btn primary-btn"><i class="fas fa-paper-plane"></i> Send Message</button>
+                        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
                     </form>
                 </div>
             </div>
@@ -611,9 +616,15 @@
                     <a href="#services">Services</a>
                     <a href="#contact">Contact</a>
                 </div>
+                <div class="footer-socials">
+                    <a href="mailto:rakholiyavaibhav@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://www.upwork.com/" target="_blank" rel="noopener noreferrer" aria-label="Upwork"><i class="fas fa-briefcase"></i></a>
+                    <a href="https://github.com/vaibhavrakholiya" target="_blank" rel="me noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/vaibhav-rakholiya-130169190" target="_blank" rel="me noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Vaibhav Rakholiya. Crafted with care.</p>
+                <p>&copy; <span id="year">2026</span> Vaibhav Rakholiya. Crafted with care.</p>
             </div>
         </div>
     </footer>

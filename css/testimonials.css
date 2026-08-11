@@ -4,23 +4,46 @@
     position: relative;
 }
 
+/* All slides share one grid cell, so the slider sizes itself to the tallest
+   quote and the controls below never move. No JS measurement needed. */
 .testimonials-slider {
+    display: grid;
+    grid-template-areas: "slide";
     position: relative;
     max-width: 860px;
     margin: 0 auto;
-    min-height: 320px;
 }
 
 .testimonial-item {
+    grid-area: slide;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(40px);
     padding: 2.5rem 2.25rem 2rem;
     border-radius: var(--radius-lg);
     background: var(--surface);
     border: 1px solid var(--border);
     backdrop-filter: blur(14px);
     box-shadow: var(--shadow-card);
-    transition: opacity 0.35s var(--ease), transform 0.35s var(--ease);
+    transition: opacity 0.35s var(--ease), transform 0.35s var(--ease), visibility 0s linear 0.35s;
     position: relative;
     isolation: isolate;
+}
+
+.testimonial-item.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+    transition: opacity 0.35s var(--ease), transform 0.35s var(--ease), visibility 0s;
+    z-index: 1;
+}
+
+/* No-JS / script-failure fallback: if nothing was marked active, show the first
+   quote rather than an empty box. */
+.testimonials-slider:not(:has(.active)) .testimonial-item:first-child {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
 }
 
 .testimonial-item::before {
@@ -46,12 +69,12 @@
     height: 48px;
     border-radius: 50%;
     background: var(--accent-grad);
-    color: #0b0b14;
+    color: var(--on-accent);
     display: inline-flex;
     align-items: center;
     justify-content: center;
     font-size: 1.05rem;
-    box-shadow: 0 10px 30px -10px rgba(139, 92, 246, 0.7);
+    box-shadow: 0 10px 30px -10px rgba(5, 150, 105, 0.7);
 }
 
 .testimonial-item p {
@@ -75,14 +98,14 @@
     height: 52px;
     border-radius: 50%;
     background: var(--accent-grad);
-    color: #0b0b14;
+    color: var(--on-accent);
     display: inline-flex;
     align-items: center;
     justify-content: center;
     font-weight: 700;
     font-family: 'Space Grotesk', sans-serif;
     font-size: 1rem;
-    box-shadow: 0 6px 20px -6px rgba(139, 92, 246, 0.6);
+    box-shadow: 0 6px 20px -6px rgba(5, 150, 105, 0.6);
 }
 
 .client-details h4 {
@@ -103,7 +126,7 @@
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    margin-top: 2rem !important;
+    margin-top: 2rem;
 }
 
 .prev-btn,
@@ -122,9 +145,9 @@
 
 .prev-btn:hover,
 .next-btn:hover {
-    border-color: var(--cyan);
-    color: var(--cyan);
-    box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.12);
+    border-color: var(--jade);
+    color: var(--jade);
+    box-shadow: 0 0 0 4px rgba(20, 184, 166, 0.12);
 }
 
 .dots {
@@ -136,10 +159,21 @@
 .dot {
     width: 8px;
     height: 8px;
+    padding: 0;
+    border: 0;
     border-radius: 50%;
+    position: relative;
     background: rgba(255, 255, 255, 0.18);
     cursor: pointer;
     transition: all 0.25s var(--ease);
+}
+
+/* 8px is far below the 24px minimum touch target — expand the hit area
+   without changing how the dot looks. */
+.dot::after {
+    content: "";
+    position: absolute;
+    inset: -9px;
 }
 
 .dot:hover {
@@ -150,7 +184,7 @@
     width: 26px;
     border-radius: var(--radius-pill);
     background: var(--accent-grad);
-    box-shadow: 0 0 14px rgba(139, 92, 246, 0.7);
+    box-shadow: 0 0 14px rgba(5, 150, 105, 0.7);
 }
 
 @media (max-width: 600px) {

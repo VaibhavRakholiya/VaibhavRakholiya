@@ -8,6 +8,7 @@
     <meta name="description" content="Vaibhav Rakholiya — Full portfolio of 50+ shipped Unity games and Flutter Android apps: hyper-casual, puzzle, utility, multiplayer, AR/VR, and mobile titles on Google Play.">
     <meta name="author" content="Vaibhav Rakholiya">
     <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#059669">
     <title>Vaibhav Rakholiya | Game Projects Portfolio</title>
     <link rel="canonical" href="https://vaibhavrakholiya.github.io/projects.html">
     <meta property="og:type" content="website">
@@ -34,13 +35,15 @@
 </head>
 
 <body>
+    <a href="#main" class="skip-link">Skip to content</a>
+
     <div class="scroll-progress" id="scrollProgress"></div>
     <!-- Header -->
     <header>
         <div class="container">
             <div class="header-profile">
                 <div class="profile-image">
-                    <img src="images/Profile.jpg" alt="Vaibhav Rakholiya">
+                    <img src="images/Profile.jpg" alt="Vaibhav Rakholiya" width="42" height="42" fetchpriority="high">
                 </div>
                 <div class="logo">
                     <a href="index.html">
@@ -49,23 +52,25 @@
                 </div>
             </div>
             <nav>
-                <ul class="nav-links">
+                <ul class="nav-links" id="primaryNav">
                     <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
                     <li><a href="index.html#skills">Skills</a></li>
-                    <li><a href="index.html#projects" class="active">Projects</a></li>
+                    <li><a href="projects.html" class="active" aria-current="page">Projects</a></li>
                     <li><a href="index.html#services">Services</a></li>
                     <li><a href="index.html#testimonials">Testimonials</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
                 </ul>
-                <div class="hamburger">
+                <button type="button" class="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="primaryNav">
                     <span></span>
                     <span></span>
                     <span></span>
-                </div>
+                </button>
             </nav>
         </div>
     </header>
 
-    <main>
+    <main id="main">
     <!-- Projects Section -->
     <section class="projects projects-page">
         <div class="container">
@@ -74,66 +79,70 @@
                 <div class="underline"></div>
             </div>
 
-            <div class="project-filters">
-                <button class="filter-btn active" data-filter="all">
+            <div class="project-filters" role="group" aria-label="Filter projects by category">
+                <button type="button" class="filter-btn active" data-filter="all" aria-pressed="true">
                     <i class="fas fa-th-large"></i> All Projects
                 </button>
-                <button class="filter-btn" data-filter="puzzle">
+                <button type="button" class="filter-btn" aria-pressed="false" data-filter="puzzle">
                     <i class="fas fa-puzzle-piece"></i> Puzzle
                 </button>
-                <button class="filter-btn" data-filter="educational">
+                <button type="button" class="filter-btn" aria-pressed="false" data-filter="educational">
                     <i class="fas fa-graduation-cap"></i> Educational
                 </button>
-                <button class="filter-btn" data-filter="card">
+                <button type="button" class="filter-btn" aria-pressed="false" data-filter="card">
                     <i class="fas fa-cards"></i> Card Games
                 </button>
-                <button class="filter-btn" data-filter="simulation">
+                <button type="button" class="filter-btn" aria-pressed="false" data-filter="simulation">
                     <i class="fas fa-gamepad"></i> Simulation
                 </button>
-                <button class="filter-btn" data-filter="casual">
+                <button type="button" class="filter-btn" aria-pressed="false" data-filter="casual">
                     <i class="fas fa-smile"></i> Casual
                 </button>
-                <button class="filter-btn" data-filter="hypercasual">
+                <button type="button" class="filter-btn" aria-pressed="false" data-filter="hypercasual">
                     <i class="fas fa-bolt"></i> Hyper Casual
                 </button>
-                <button class="filter-btn" data-filter="casino">
+                <button type="button" class="filter-btn" aria-pressed="false" data-filter="casino">
                     <i class="fas fa-dice"></i> Casino
                 </button>
-                <button class="filter-btn" data-filter="multiplayer">
+                <button type="button" class="filter-btn" aria-pressed="false" data-filter="multiplayer">
                     <i class="fas fa-users"></i> Multiplayer
                 </button>
-                <button class="filter-btn" data-filter="web3">
+                <button type="button" class="filter-btn" aria-pressed="false" data-filter="web3">
                     <i class="fas fa-cube"></i> Web3
                 </button>
-                <button class="filter-btn" data-filter="arvr">
+                <button type="button" class="filter-btn" aria-pressed="false" data-filter="arvr">
                     <i class="fas fa-vr-cardboard"></i> AR/VR
                 </button>
-                <button class="filter-btn" data-filter="sports">
+                <button type="button" class="filter-btn" aria-pressed="false" data-filter="sports">
                     <i class="fas fa-table-tennis-paddle-ball"></i> Sports
                 </button>
-                <button class="filter-btn" data-filter="shooter">
+                <button type="button" class="filter-btn" aria-pressed="false" data-filter="shooter">
                     <i class="fa-solid fa-gun"></i> Shooter
                 </button>
-                <button class="filter-btn" data-filter="utility">
+                <button type="button" class="filter-btn" aria-pressed="false" data-filter="utility">
                     <i class="fas fa-mobile-screen"></i> Mobile Apps
                 </button>
             </div>
 
+            <p class="filter-count" id="filterCount" role="status" aria-live="polite"></p>
+
             <div class="projects-grid">
+                <p class="no-results" id="noResults" hidden>No projects in this category yet.</p>
                 <!-- Project 1: Poker PayDay -->
                 <div class="project-item casino card multiplayer">
-                    <div class="project-media">
+                    <div class="project-media" data-video>
                         <div class="project-video">
-                            <video autoplay loop muted playsinline preload="auto" poster="images/Project1.png">
-                                <source src="videos/Project1.mp4" type="video/mp4">
+                            <video loop muted playsinline preload="none" poster="images/Project1.png">
+                                <source data-src="videos/Project1.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
+                        <span class="video-hint">Tap to play</span>
                     </div>
                     <div class="project-info">
                         <div class="project-header">
                             <div class="project-icon">
-                                <img src="images/Project1.png" alt="Poker PayDay Icon">
+                                <img src="images/Project1.png" alt="Poker PayDay Icon" loading="lazy" decoding="async">
                             </div>
                             <div class="title-category">
                                 <h3 class="project-title">Poker PayDay</h3>
@@ -176,18 +185,19 @@
 
                 <!-- Project 2: Save The Dog -->
                 <div class="project-item hypercasual puzzle">
-                    <div class="project-media">
+                    <div class="project-media" data-video>
                         <div class="project-video">
-                            <video autoplay loop muted playsinline preload="auto" poster="images/Project2.png">
-                                <source src="videos/Project2.mp4" type="video/mp4">
+                            <video loop muted playsinline preload="none" poster="images/Project2.png">
+                                <source data-src="videos/Project2.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
+                        <span class="video-hint">Tap to play</span>
                     </div>
                     <div class="project-info">
                         <div class="project-header">
                             <div class="project-icon">
-                                <img src="images/Project2.png" alt="Save The Dog Icon">
+                                <img src="images/Project2.png" alt="Save The Dog Icon" loading="lazy" decoding="async">
                             </div>
                             <div class="title-category">
                                 <h3 class="project-title">Save The Dog</h3>
@@ -228,18 +238,19 @@
 
                 <!-- Project 3: WordBlox - Word Puzzles -->
                 <div class="project-item puzzle casual educational">
-                    <div class="project-media">
+                    <div class="project-media" data-video>
                         <div class="project-video">
-                            <video autoplay loop muted playsinline preload="auto" poster="images/Project3.png">
-                                <source src="videos/Project3.mp4" type="video/mp4">
+                            <video loop muted playsinline preload="none" poster="images/Project3.png">
+                                <source data-src="videos/Project3.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
+                        <span class="video-hint">Tap to play</span>
                     </div>
                     <div class="project-info">
                         <div class="project-header">
                             <div class="project-icon">
-                                <img src="images/Project3.png" alt="WordBlox - Word Puzzles Icon">
+                                <img src="images/Project3.png" alt="WordBlox - Word Puzzles Icon" loading="lazy" decoding="async">
                             </div>
                             <div class="title-category">
                                 <h3 class="project-title">WordBlox - Word Puzzles</h3>
@@ -294,18 +305,19 @@
 
                 <!-- Project 4: Pool Pay Day -->
                 <div class="project-item game casino simulation">
-                    <div class="project-media">
+                    <div class="project-media" data-video>
                         <div class="project-video">
-                            <video autoplay loop muted playsinline preload="auto" poster="images/Project4.png">
-                                <source src="videos/Project4.mp4" type="video/mp4">
+                            <video loop muted playsinline preload="none" poster="images/Project4.png">
+                                <source data-src="videos/Project4.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
+                        <span class="video-hint">Tap to play</span>
                     </div>
                     <div class="project-info">
                         <div class="project-header">
                             <div class="project-icon">
-                                <img src="images/Project4.png" alt="Pool Pay Day Icon">
+                                <img src="images/Project4.png" alt="Pool Pay Day Icon" loading="lazy" decoding="async">
                             </div>
                             <div class="title-category">
                                 <h3 class="project-title">Pool Pay Day</h3>
@@ -361,18 +373,19 @@
 
                 <!-- Project 5: Pig Fight -->
                 <div class="project-item game multiplayer casual">
-                    <div class="project-media">
+                    <div class="project-media" data-video>
                         <div class="project-video">
-                            <video autoplay loop muted playsinline preload="auto" poster="images/Project5.png">
-                                <source src="videos/Project5.mp4" type="video/mp4">
+                            <video loop muted playsinline preload="none" poster="images/Project5.png">
+                                <source data-src="videos/Project5.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
+                        <span class="video-hint">Tap to play</span>
                     </div>
                     <div class="project-info">
                         <div class="project-header">
                             <div class="project-icon">
-                                <img src="images/Project5.png" alt="Pig Fight Icon">
+                                <img src="images/Project5.png" alt="Pig Fight Icon" loading="lazy" decoding="async">
                             </div>
                             <div class="title-category">
                                 <h3 class="project-title">Pig Fight</h3>
@@ -428,18 +441,19 @@
 
                 <!-- Project 6: Hexa Buzzle -->
                 <div class="project-item puzzle casual">
-                    <div class="project-media">
+                    <div class="project-media" data-video>
                         <div class="project-video">
-                            <video autoplay loop muted playsinline preload="auto" poster="images/Project06.png">
-                                <source src="videos/Project6.mp4" type="video/mp4">
+                            <video loop muted playsinline preload="none" poster="images/Project06.png">
+                                <source data-src="videos/Project6.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
+                        <span class="video-hint">Tap to play</span>
                     </div>
                     <div class="project-info">
                         <div class="project-header">
                             <div class="project-icon">
-                                <img src="images/Project06.png" alt="Hexa Buzzle Icon">
+                                <img src="images/Project06.png" alt="Hexa Buzzle Icon" loading="lazy" decoding="async">
                             </div>
                             <div class="title-category">
                                 <h3 class="project-title">Hexa Buzzle</h3>
@@ -499,18 +513,19 @@
 
                 <!-- Project 7: Merge Warriors -->
                 <div class="project-item game casual hypercasual simulation">
-                    <div class="project-media">
+                    <div class="project-media" data-video>
                         <div class="project-video">
-                            <video autoplay loop muted playsinline preload="auto" poster="images/Project7.png">
-                                <source src="videos/Project7.mp4" type="video/mp4">
+                            <video loop muted playsinline preload="none" poster="images/Project7.png">
+                                <source data-src="videos/Project7.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
+                        <span class="video-hint">Tap to play</span>
                     </div>
                     <div class="project-info">
                         <div class="project-header">
                             <div class="project-icon">
-                                <img src="images/Project7.png" alt="Merge Warriors Icon">
+                                <img src="images/Project7.png" alt="Merge Warriors Icon" loading="lazy" decoding="async">
                             </div>
                             <div class="title-category">
                                 <h3 class="project-title">Merge Warriors</h3>
@@ -554,18 +569,19 @@
 
                 <!-- Project 8: Math Game For Kids -->
                 <div class="project-item mobile educational">
-                    <div class="project-media" data-resolution="1920x1080">
+                    <div class="project-media" data-video data-resolution="1920x1080">
                         <div class="project-video">
-                            <video autoplay loop muted playsinline preload="auto" poster="images/Project8.png">
-                                <source src="videos/Project8.mp4" type="video/mp4">
+                            <video loop muted playsinline preload="none" poster="images/Project8.png">
+                                <source data-src="videos/Project8.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
+                        <span class="video-hint">Tap to play</span>
                     </div>
                     <div class="project-info">
                         <div class="project-header">
                             <div class="project-icon">
-                                <img src="images/Project8.png" alt="Math Game For Kids Icon">
+                                <img src="images/Project8.png" alt="Math Game For Kids Icon" loading="lazy" decoding="async">
                             </div>
                             <div class="title-category">
                                 <h3 class="project-title">Math Game For Kids</h3>
@@ -607,13 +623,14 @@
 
                 <!-- Project 9: Spider Solitaire Infinite -->
                 <div class="project-item game card">
-                    <div class="project-media">
+                    <div class="project-media" data-video>
                         <div class="project-video">
-                            <video autoplay loop muted playsinline preload="auto" poster="images/Project9.jpeg">
-                                <source src="videos/Project9.mp4" type="video/mp4">
+                            <video loop muted playsinline preload="none" poster="images/Project9.jpeg">
+                                <source data-src="videos/Project9.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
+                        <span class="video-hint">Tap to play</span>
                     </div>
                     <div class="project-info">
                         <div class="project-header">
@@ -664,13 +681,14 @@
 
                 <!-- Project 10: Words of the World -->
                 <div class="project-item puzzle educational puzzle">
-                    <div class="project-media">
+                    <div class="project-media" data-video>
                         <div class="project-video">
-                            <video autoplay loop muted playsinline preload="auto" poster="images/Project10.jpeg">
-                                <source src="videos/Project10.mp4" type="video/mp4">
+                            <video loop muted playsinline preload="none" poster="images/Project10.jpeg">
+                                <source data-src="videos/Project10.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
+                        <span class="video-hint">Tap to play</span>
                     </div>
                     <div class="project-info">
                         <div class="project-header">
@@ -721,18 +739,19 @@
 
                 <!-- Project 11: Kids Matching Game -->
                 <div class="project-item mobile educational puzzle">
-                    <div class="project-media" data-resolution="1920x1080">
+                    <div class="project-media" data-video data-resolution="1920x1080">
                         <div class="project-video">
-                            <video autoplay loop muted playsinline preload="auto" poster="images/Project11.png">
-                                <source src="videos/Project11.mp4" type="video/mp4">
+                            <video loop muted playsinline preload="none" poster="images/Project11.png">
+                                <source data-src="videos/Project11.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
+                        <span class="video-hint">Tap to play</span>
                     </div>
                     <div class="project-info">
                         <div class="project-header">
                             <div class="project-icon">
-                                <img src="images/Project11.png" alt="Kids Matching Game Icon">
+                                <img src="images/Project11.png" alt="Kids Matching Game Icon" loading="lazy" decoding="async">
                             </div>
                             <div class="title-category">
                                 <h3 class="project-title">Kids Matching Game: Learn Game</h3>
@@ -774,13 +793,14 @@
 
                 <!-- Project 12: Lacorsa -->
                 <div class="project-item game card simulation multiplayer">
-                    <div class="project-media" data-resolution="1920x1080">
+                    <div class="project-media" data-video data-resolution="1920x1080">
                         <div class="project-video">
-                            <video autoplay loop muted playsinline preload="auto" poster="images/Project12.jpg">
-                                <source src="videos/Project12.mp4" type="video/mp4">
+                            <video loop muted playsinline preload="none" poster="images/Project12.jpg">
+                                <source data-src="videos/Project12.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
+                        <span class="video-hint">Tap to play</span>
                     </div>
                     <div class="project-info">
                         <div class="project-header">
@@ -829,18 +849,19 @@
 
                 <!-- Project 13: Fishing -->
                 <div class="project-item game casual simulation">
-                    <div class="project-media">
+                    <div class="project-media" data-video>
                         <div class="project-video">
-                            <video autoplay loop muted playsinline preload="auto" poster="images/Project13.png">
-                                <source src="videos/Project13.mp4" type="video/mp4">
+                            <video loop muted playsinline preload="none" poster="images/Project13.png">
+                                <source data-src="videos/Project13.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
+                        <span class="video-hint">Tap to play</span>
                     </div>
                     <div class="project-info">
                         <div class="project-header">
                             <div class="project-icon">
-                                <img src="images/Project13.png" alt="Fishing Icon">
+                                <img src="images/Project13.png" alt="Fishing Icon" loading="lazy" decoding="async">
                             </div>
                             <div class="title-category">
                                 <h3 class="project-title">Fishing</h3>
@@ -884,18 +905,19 @@
 
                 <!-- Project 14: Ship Fall -->
                 <div class="project-item game hypercasual simulation">
-                    <div class="project-media">
+                    <div class="project-media" data-video>
                         <div class="project-video">
-                            <video autoplay loop muted playsinline preload="auto" poster="images/Project14.png">
-                                <source src="videos/Project14.mp4" type="video/mp4">
+                            <video loop muted playsinline preload="none" poster="images/Project14.png">
+                                <source data-src="videos/Project14.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
+                        <span class="video-hint">Tap to play</span>
                     </div>
                     <div class="project-info">
                         <div class="project-header">
                             <div class="project-icon">
-                                <img src="images/Project14.png" alt="Ship Fall Icon">
+                                <img src="images/Project14.png" alt="Ship Fall Icon" loading="lazy" decoding="async">
                             </div>
                             <div class="title-category">
                                 <h3 class="project-title">Ship Fall</h3>
@@ -939,18 +961,19 @@
 
                 <!-- Project 15: Bus Jam Game -->
                 <div class="project-item puzzle hypercasual puzzle ">
-                    <div class="project-media">
+                    <div class="project-media" data-video>
                         <div class="project-video">
-                            <video autoplay loop muted playsinline preload="auto" poster="images/Project15.png">
-                                <source src="videos/Project15.mp4" type="video/mp4">
+                            <video loop muted playsinline preload="none" poster="images/Project15.png">
+                                <source data-src="videos/Project15.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
+                        <span class="video-hint">Tap to play</span>
                     </div>
                     <div class="project-info">
                         <div class="project-header">
                             <div class="project-icon">
-                                <img src="images/Project15.png" alt="Bus Jam Game Icon">
+                                <img src="images/Project15.png" alt="Bus Jam Game Icon" loading="lazy" decoding="async">
                             </div>
                             <div class="title-category">
                                 <h3 class="project-title">Bus Jam Game</h3>
@@ -994,13 +1017,14 @@
 
                 <!-- Project 16: BrainPad Phonics for Kids -->
                 <!-- <div class="project-item mobile educational puzzle">
-                    <div class="project-media" data-resolution="1920x1080">
+                    <div class="project-media" data-video data-resolution="1920x1080">
                         <div class="project-video">
-                            <video autoplay loop muted playsinline preload="auto" poster="images/BrainPad.jpg">
-                                <source src="videos/Project16.mp4" type="video/mp4">
+                            <video loop muted playsinline preload="none" poster="images/BrainPad.jpg">
+                                <source data-src="videos/Project16.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
+                        <span class="video-hint">Tap to play</span>
                     </div>
                     <div class="project-info">
                         <div class="project-header">
@@ -1047,13 +1071,14 @@
 
                 <!-- Project 17: Monstar Attack -->
                 <div class="project-item game hypercasual simulation  shooter">
-                    <div class="project-media">
+                    <div class="project-media" data-video>
                         <div class="project-video">
-                            <video autoplay loop muted playsinline preload="auto" poster="images/Project17.jpeg">
-                                <source src="videos/Project17.mp4" type="video/mp4">
+                            <video loop muted playsinline preload="none" poster="images/Project17.jpeg">
+                                <source data-src="videos/Project17.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
+                        <span class="video-hint">Tap to play</span>
                     </div>
                     <div class="project-info">
                         <div class="project-header">
@@ -1099,18 +1124,19 @@
 
                 <!-- Project 18: 1000 Soldiers -->
                 <div class="project-item game simulation shooter">
-                    <div class="project-media">
+                    <div class="project-media" data-video>
                         <div class="project-video">
-                            <video autoplay loop muted playsinline preload="auto" poster="images/Project18.png">
-                                <source src="videos/Project18.mp4" type="video/mp4">
+                            <video loop muted playsinline preload="none" poster="images/Project18.png">
+                                <source data-src="videos/Project18.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
+                        <span class="video-hint">Tap to play</span>
                     </div>
                     <div class="project-info">
                         <div class="project-header">
                             <div class="project-icon">
-                                <img src="images/Project18.png" alt="1000 Soldiers Icon">
+                                <img src="images/Project18.png" alt="1000 Soldiers Icon" loading="lazy" decoding="async">
                             </div>
                             <div class="title-category">
                                 <h3 class="project-title">1000 Soldiers</h3>
@@ -1166,18 +1192,19 @@
 
                 <!-- Project 19: The Kaleidoscope Classic -->
                 <div class="project-item puzzle casual puzzle">
-                    <div class="project-media">
+                    <div class="project-media" data-video>
                         <div class="project-video">
-                            <video autoplay loop muted playsinline preload="auto" poster="images/Project19.png">
-                                <source src="videos/Project19.mp4" type="video/mp4">
+                            <video loop muted playsinline preload="none" poster="images/Project19.png">
+                                <source data-src="videos/Project19.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
+                        <span class="video-hint">Tap to play</span>
                     </div>
                     <div class="project-info">
                         <div class="project-header">
                             <div class="project-icon">
-                                <img src="images/Project19.png" alt="The Kaleidoscope Classic Icon">
+                                <img src="images/Project19.png" alt="The Kaleidoscope Classic Icon" loading="lazy" decoding="async">
                             </div>
                             <div class="title-category">
                                 <h3 class="project-title">The Kaleidoscope Classic</h3>
@@ -1231,18 +1258,19 @@
 
                 <!-- Project 20: Sorty Match 3D -->
                 <div class="project-item puzzle casual puzzle">
-                    <div class="project-media">
+                    <div class="project-media" data-video>
                         <div class="project-video">
-                            <video autoplay loop muted playsinline preload="auto" poster="images/Project20.png">
-                                <source src="videos/project20.mp4" type="video/mp4">
+                            <video loop muted playsinline preload="none" poster="images/Project20.png">
+                                <source data-src="videos/project20.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
+                        <span class="video-hint">Tap to play</span>
                     </div>
                     <div class="project-info">
                         <div class="project-header">
                             <div class="project-icon">
-                                <img src="images/Project20.png" alt="Sorty Match 3D Icon">
+                                <img src="images/Project20.png" alt="Sorty Match 3D Icon" loading="lazy" decoding="async">
                             </div>
                             <div class="title-category">
                                 <h3 class="project-title">Sorty Match 3D</h3>
@@ -1300,18 +1328,19 @@
 
                 <!-- Project 21: Snake Master -->
                 <div class="project-item game hypercasual simulation">
-                    <div class="project-media">
+                    <div class="project-media" data-video>
                         <div class="project-video">
-                            <video autoplay loop muted playsinline preload="auto" poster="images/Project21.png">
-                                <source src="videos/Project21.mp4" type="video/mp4">
+                            <video loop muted playsinline preload="none" poster="images/Project21.png">
+                                <source data-src="videos/Project21.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
+                        <span class="video-hint">Tap to play</span>
                     </div>
                     <div class="project-info">
                         <div class="project-header">
                             <div class="project-icon">
-                                <img src="images/Project21.png" alt="Snake Master Icon">
+                                <img src="images/Project21.png" alt="Snake Master Icon" loading="lazy" decoding="async">
                             </div>
                             <div class="title-category">
                                 <h3 class="project-title">Snake Master</h3>
@@ -1364,18 +1393,19 @@
 
                 <!-- Project 22: FootSpa Empire -->
                 <div class="project-item mobile simulation casual">
-                    <div class="project-media">
+                    <div class="project-media" data-video>
                         <div class="project-video">
-                            <video autoplay loop muted playsinline preload="auto" poster="images/Project22.png">
-                                <source src="videos/Project22.mp4" type="video/mp4">
+                            <video loop muted playsinline preload="none" poster="images/Project22.png">
+                                <source data-src="videos/Project22.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
+                        <span class="video-hint">Tap to play</span>
                     </div>
                     <div class="project-info">
                         <div class="project-header">
                             <div class="project-icon">
-                                <img src="images/Project22.png" alt="FootSpa Empire Icon">
+                                <img src="images/Project22.png" alt="FootSpa Empire Icon" loading="lazy" decoding="async">
                             </div>
                             <div class="title-category">
                                 <h3 class="project-title">FootSpa Empire</h3>
@@ -1416,18 +1446,19 @@
 
                 <!-- Project 23: Outlate Rush -->
                 <div class="project-item game hypercasual simulation">
-                    <div class="project-media">
+                    <div class="project-media" data-video>
                         <div class="project-video">
-                            <video autoplay loop muted playsinline preload="auto" poster="images/Project23.png">
-                                <source src="videos/Project23.mp4" type="video/mp4">
+                            <video loop muted playsinline preload="none" poster="images/Project23.png">
+                                <source data-src="videos/Project23.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
+                        <span class="video-hint">Tap to play</span>
                     </div>
                     <div class="project-info">
                         <div class="project-header">
                             <div class="project-icon">
-                                <img src="images/Project23.png" alt="Outlate Rush Icon">
+                                <img src="images/Project23.png" alt="Outlate Rush Icon" loading="lazy" decoding="async">
                             </div>
                             <div class="title-category">
                                 <h3 class="project-title">Outlate Rush</h3>
@@ -1472,13 +1503,14 @@
 
                 <!-- Project 24: Sculpt Run Master -->
                 <div class="project-item game hypercasual simulation">
-                    <div class="project-media">
+                    <div class="project-media" data-video>
                         <div class="project-video">
-                            <video autoplay loop muted playsinline preload="auto" poster="images/Project24.jpg">
-                                <source src="videos/Project24.mp4" type="video/mp4">
+                            <video loop muted playsinline preload="none" poster="images/Project24.jpg">
+                                <source data-src="videos/Project24.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
+                        <span class="video-hint">Tap to play</span>
                     </div>
                     <div class="project-info">
                         <div class="project-header">
@@ -1524,18 +1556,19 @@
 
                 <!-- Project 25: Maze Craze - Labyrinth Puzzles -->
                 <div class="project-item puzzle casual puzzle">
-                    <div class="project-media">
+                    <div class="project-media" data-video>
                         <div class="project-video">
-                            <video autoplay loop muted playsinline preload="auto" poster="images/Project25.png">
-                                <source src="videos/Project25.mp4" type="video/mp4">
+                            <video loop muted playsinline preload="none" poster="images/Project25.png">
+                                <source data-src="videos/Project25.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
+                        <span class="video-hint">Tap to play</span>
                     </div>
                     <div class="project-info">
                         <div class="project-header">
                             <div class="project-icon">
-                                <img src="images/Project25.png" alt="Maze Craze Icon">
+                                <img src="images/Project25.png" alt="Maze Craze Icon" loading="lazy" decoding="async">
                             </div>
                             <div class="title-category">
                                 <h3 class="project-title">Maze Craze - Labyrinth Puzzles</h3>
@@ -1581,18 +1614,19 @@
 
                 <!-- Project 26: Runner Shooter -->
                 <div class="project-item game hypercasual simulation  shooter">
-                    <div class="project-media">
+                    <div class="project-media" data-video>
                         <div class="project-video">
-                            <video autoplay loop muted playsinline preload="auto" poster="images/Project26.png">
-                                <source src="videos/Project26.mp4" type="video/mp4">
+                            <video loop muted playsinline preload="none" poster="images/Project26.png">
+                                <source data-src="videos/Project26.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
+                        <span class="video-hint">Tap to play</span>
                     </div>
                     <div class="project-info">
                         <div class="project-header">
                             <div class="project-icon">
-                                <img src="images/Project26.png" alt="Runner Shooter Icon">
+                                <img src="images/Project26.png" alt="Runner Shooter Icon" loading="lazy" decoding="async">
                             </div>
                             <div class="title-category">
                                 <h3 class="project-title">Runner Shooter</h3>
@@ -1633,18 +1667,19 @@
 
                 <!-- Project 27: Find the Different Puzzle Jam -->
                 <div class="project-item puzzle casual puzzle">
-                    <div class="project-media">
+                    <div class="project-media" data-video>
                         <div class="project-video">
-                            <video autoplay loop muted playsinline preload="auto" poster="images/Project27.png">
-                                <source src="videos/Project27.mp4" type="video/mp4">
+                            <video loop muted playsinline preload="none" poster="images/Project27.png">
+                                <source data-src="videos/Project27.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
+                        <span class="video-hint">Tap to play</span>
                     </div>
                     <div class="project-info">
                         <div class="project-header">
                             <div class="project-icon">
-                                <img src="images/Project27.png" alt="Find the Different Puzzle Jam Icon">
+                                <img src="images/Project27.png" alt="Find the Different Puzzle Jam Icon" loading="lazy" decoding="async">
                             </div>
                             <div class="title-category">
                                 <h3 class="project-title">Find the Different Puzzle Jam</h3>
@@ -1687,18 +1722,19 @@
 
                 <!-- Project 28: Color Clash -->
                 <div class="project-item game hypercasual ">
-                    <div class="project-media">
+                    <div class="project-media" data-video>
                         <div class="project-video">
-                            <video autoplay loop muted playsinline preload="auto" poster="images/Project28.png">
-                                <source src="videos/Project28.mp4" type="video/mp4">
+                            <video loop muted playsinline preload="none" poster="images/Project28.png">
+                                <source data-src="videos/Project28.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
+                        <span class="video-hint">Tap to play</span>
                     </div>
                     <div class="project-info">
                         <div class="project-header">
                             <div class="project-icon">
-                                <img src="images/Project28.png" alt="Color Clash Icon">
+                                <img src="images/Project28.png" alt="Color Clash Icon" loading="lazy" decoding="async">
                             </div>
                             <div class="title-category">
                                 <h3 class="project-title">Color Clash</h3>
@@ -1739,18 +1775,19 @@
 
                 <!-- Project 29: Flick Chess -->
                 <div class="project-item game simulation casual">
-                    <div class="project-media">
+                    <div class="project-media" data-video>
                         <div class="project-video">
-                            <video autoplay loop muted playsinline preload="auto" poster="images/Project29.png">
-                                <source src="videos/Project29.mp4" type="video/mp4">
+                            <video loop muted playsinline preload="none" poster="images/Project29.png">
+                                <source data-src="videos/Project29.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
+                        <span class="video-hint">Tap to play</span>
                     </div>
                     <div class="project-info">
                         <div class="project-header">
                             <div class="project-icon">
-                                <img src="images/Project29.png" alt="Flick Chess Icon">
+                                <img src="images/Project29.png" alt="Flick Chess Icon" loading="lazy" decoding="async">
                             </div>
                             <div class="title-category">
                                 <h3 class="project-title">Flick Chess</h3>
@@ -1797,18 +1834,19 @@
 
                 <!-- Project 30: Double Match 3D -->
                 <div class="project-item puzzle hypercasual puzzle ">
-                    <div class="project-media">
+                    <div class="project-media" data-video>
                         <div class="project-video">
-                            <video autoplay loop muted playsinline preload="auto" poster="images/Project30.png">
-                                <source src="videos/Project30.mp4" type="video/mp4">
+                            <video loop muted playsinline preload="none" poster="images/Project30.png">
+                                <source data-src="videos/Project30.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
+                        <span class="video-hint">Tap to play</span>
                     </div>
                     <div class="project-info">
                         <div class="project-header">
                             <div class="project-icon">
-                                <img src="images/Project30.png" alt="Double Match 3D Icon">
+                                <img src="images/Project30.png" alt="Double Match 3D Icon" loading="lazy" decoding="async">
                             </div>
                             <div class="title-category">
                                 <h3 class="project-title">Double Match 3D</h3>
@@ -1849,18 +1887,19 @@
                 </div>
                 <!-- Project 31: Golf Clash -->
                 <div class="project-item puzzle hypercasual multiplayer sports ">
-                    <div class="project-media">
+                    <div class="project-media" data-video>
                         <div class="project-video">
-                            <video autoplay loop muted playsinline preload="auto" poster="images/Project31.png">
-                                <source src="videos/Project31.mp4" type="video/mp4">
+                            <video loop muted playsinline preload="none" poster="images/Project31.png">
+                                <source data-src="videos/Project31.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
+                        <span class="video-hint">Tap to play</span>
                     </div>
                     <div class="project-info">
                         <div class="project-header">
                             <div class="project-icon">
-                                <img src="images/Project31.png" alt="Double Match 3D Icon">
+                                <img src="images/Project31.png" alt="Double Match 3D Icon" loading="lazy" decoding="async">
                             </div>
                             <div class="title-category">
                                 <h3 class="project-title">Golf Clash</h3>
@@ -1898,18 +1937,19 @@
                 </div>
                 <!-- Project 32: Webgl Roulete -->
                 <div class="project-item web3 casino multiplayer">
-                    <div class="project-media" data-resolution="1920x1080">
+                    <div class="project-media" data-video data-resolution="1920x1080">
                         <div class="project-video">
-                            <video autoplay loop muted playsinline preload="auto" poster="images/Project32.png">
-                                <source src="videos/Project32.mp4" type="video/mp4">
+                            <video loop muted playsinline preload="none" poster="images/Project32.png">
+                                <source data-src="videos/Project32.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
+                        <span class="video-hint">Tap to play</span>
                     </div>
                     <div class="project-info">
                         <div class="project-header">
                             <div class="project-icon">
-                                <img src="images/Project32.png" alt="Casino Roulet">
+                                <img src="images/Project32.png" alt="Casino Roulet" loading="lazy" decoding="async">
                             </div>
                             <div class="title-category">
                                 <h3 class="project-title">Casino Roulete</h3>
@@ -1947,18 +1987,19 @@
                 </div>
                 <!-- Project 33: Casino Slot Machine -->
                 <div class="project-item web3 casino multiplayer">
-                    <div class="project-media" data-resolution="1920x1080">
+                    <div class="project-media" data-video data-resolution="1920x1080">
                         <div class="project-video">
-                            <video autoplay loop muted playsinline preload="auto" poster="images/Project33.png">
-                                <source src="videos/Project33.mp4" type="video/mp4">
+                            <video loop muted playsinline preload="none" poster="images/Project33.png">
+                                <source data-src="videos/Project33.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
+                        <span class="video-hint">Tap to play</span>
                     </div>
                     <div class="project-info">
                         <div class="project-header">
                             <div class="project-icon">
-                                <img src="images/Project33.png" alt="Slot Machine">
+                                <img src="images/Project33.png" alt="Slot Machine" loading="lazy" decoding="async">
                             </div>
                             <div class="title-category">
                                 <h3 class="project-title">Slot Machine</h3>
@@ -1995,18 +2036,19 @@
                 </div>
                 <!-- Project 34 :WeareWarrior -->
                 <div class="project-item puzzle hypercasual multiplayer shooter ">
-                    <div class="project-media">
+                    <div class="project-media" data-video>
                         <div class="project-video">
-                            <video autoplay loop muted playsinline preload="auto" poster="images/Project34.png">
-                                <source src="videos/Project34.mp4" type="video/mp4">
+                            <video loop muted playsinline preload="none" poster="images/Project34.png">
+                                <source data-src="videos/Project34.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
+                        <span class="video-hint">Tap to play</span>
                     </div>
                     <div class="project-info">
                         <div class="project-header">
                             <div class="project-icon">
-                                <img src="images/Project34.png" alt="WeareWarrior">
+                                <img src="images/Project34.png" alt="WeareWarrior" loading="lazy" decoding="async">
                             </div>
                             <div class="title-category">
                                 <h3 class="project-title">WeareWarrior</h3>
@@ -2045,18 +2087,19 @@
                 </div>
                 <!-- Project 35 :Color therapy  -->
                 <div class="project-item puzzle casual educational ">
-                    <div class="project-media">
+                    <div class="project-media" data-video>
                         <div class="project-video">
-                            <video autoplay loop muted playsinline preload="auto" poster="images/Project35.png">
-                                <source src="videos/Project35.mp4" type="video/mp4">
+                            <video loop muted playsinline preload="none" poster="images/Project35.png">
+                                <source data-src="videos/Project35.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
+                        <span class="video-hint">Tap to play</span>
                     </div>
                     <div class="project-info">
                         <div class="project-header">
                             <div class="project-icon">
-                                <img src="images/Project35.png" alt="Color Therapy">
+                                <img src="images/Project35.png" alt="Color Therapy" loading="lazy" decoding="async">
                             </div>
                             <div class="title-category">
                                 <h3 class="project-title">Color Therapy</h3>
@@ -2095,18 +2138,19 @@
                 </div>
                 <!-- Project 36 :NFTDUEL -->
                 <div class="project-item  web3 multiplayer card">
-                    <div class="project-media" data-resolution="1920x1080">
+                    <div class="project-media" data-video data-resolution="1920x1080">
                         <div class="project-video">
-                            <video autoplay loop muted playsinline preload="auto" poster="images/Project36.png">
-                                <source src="videos/Project36.mp4" type="video/mp4">
+                            <video loop muted playsinline preload="none" poster="images/Project36.png">
+                                <source data-src="videos/Project36.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
+                        <span class="video-hint">Tap to play</span>
                     </div>
                     <div class="project-info">
                         <div class="project-header">
                             <div class="project-icon">
-                                <img src="images/Project36.png" alt="NFTDUEL">
+                                <img src="images/Project36.png" alt="NFTDUEL" loading="lazy" decoding="async">
                             </div>
                             <div class="title-category">
                                 <h3 class="project-title">NFTDUEL</h3>
@@ -2155,18 +2199,19 @@
                 </div>
                 <!-- Project 37 :Run For Money -->
                 <div class="project-item  web3 multiplayer">
-                    <div class="project-media" data-resolution="1920x1080">
+                    <div class="project-media" data-video data-resolution="1920x1080">
                         <div class="project-video">
-                            <video autoplay loop muted playsinline preload="auto" poster="images/Project37.png">
-                                <source src="videos/Project37.mp4" type="video/mp4">
+                            <video loop muted playsinline preload="none" poster="images/Project37.png">
+                                <source data-src="videos/Project37.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
+                        <span class="video-hint">Tap to play</span>
                     </div>
                     <div class="project-info">
                         <div class="project-header">
                             <div class="project-icon">
-                                <img src="images/Project37.png" alt="Run For Money">
+                                <img src="images/Project37.png" alt="Run For Money" loading="lazy" decoding="async">
                             </div>
                             <div class="title-category">
                                 <h3 class="project-title">Run For Money</h3>
@@ -2216,18 +2261,19 @@
                 </div>
                 <!-- Project 38 :XANA -->
                 <div class="project-item  web3 multiplayer simulation">
-                    <div class="project-media" data-resolution="1920x1080">
+                    <div class="project-media" data-video data-resolution="1920x1080">
                         <div class="project-video">
-                            <video autoplay loop muted playsinline preload="auto" poster="images/Project38.png">
-                                <source src="videos/Project38.mp4" type="video/mp4">
+                            <video loop muted playsinline preload="none" poster="images/Project38.png">
+                                <source data-src="videos/Project38.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
+                        <span class="video-hint">Tap to play</span>
                     </div>
                     <div class="project-info">
                         <div class="project-header">
                             <div class="project-icon">
-                                <img src="images/Project38.png" alt="XANA">
+                                <img src="images/Project38.png" alt="XANA" loading="lazy" decoding="async">
                             </div>
                             <div class="title-category">
                                 <h3 class="project-title">XANA</h3>
@@ -2278,18 +2324,19 @@
                 </div>
                 <!-- Project 39 :Hunt Royale -->
                 <div class="project-item  multiplayer action shooter">
-                    <div class="project-media" data-resolution="1920x1080">
+                    <div class="project-media" data-video data-resolution="1920x1080">
                         <div class="project-video">
-                            <video autoplay loop muted playsinline preload="auto" poster="images/Project39.png">
-                                <source src="videos/Project39.mp4" type="video/mp4">
+                            <video loop muted playsinline preload="none" poster="images/Project39.png">
+                                <source data-src="videos/Project39.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
+                        <span class="video-hint">Tap to play</span>
                     </div>
                     <div class="project-info">
                         <div class="project-header">
                             <div class="project-icon">
-                                <img src="images/Project39.png" alt="Hunt Royale">
+                                <img src="images/Project39.png" alt="Hunt Royale" loading="lazy" decoding="async">
                             </div>
                             <div class="title-category">
                                 <h3 class="project-title">Hunt Royale</h3>
@@ -2335,13 +2382,14 @@
                 </div>
                 <!-- Project 40:  Solitaire Infinite -->
                 <div class="project-item game card ">
-                    <div class="project-media">
+                    <div class="project-media" data-video>
                         <div class="project-video">
-                            <video autoplay loop muted playsinline preload="auto" poster="images/Project40.jpg">
-                                <source src="videos/Project40.mp4" type="video/mp4">
+                            <video loop muted playsinline preload="none" poster="images/Project40.jpg">
+                                <source data-src="videos/Project40.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
+                        <span class="video-hint">Tap to play</span>
                     </div>
                     <div class="project-info">
                         <div class="project-header">
@@ -2390,13 +2438,14 @@
                 </div>
                 <!-- Project 41:  Ant Colony -->
                 <div class="project-item game casual simulation ">
-                    <div class="project-media">
+                    <div class="project-media" data-video>
                         <div class="project-video">
-                            <video autoplay loop muted playsinline preload="auto" poster="images/Project41.jpg">
-                                <source src="videos/Project41.mp4" type="video/mp4">
+                            <video loop muted playsinline preload="none" poster="images/Project41.jpg">
+                                <source data-src="videos/Project41.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
+                        <span class="video-hint">Tap to play</span>
                     </div>
                     <div class="project-info">
                         <div class="project-header">
@@ -2436,18 +2485,19 @@
                 </div>
                 <!-- Project 41:  Ant Battle -->
                 <div class="project-item game casual simulation ">
-                    <div class="project-media">
+                    <div class="project-media" data-video>
                         <div class="project-video">
-                            <video autoplay loop muted playsinline preload="auto" poster="images/Project42.png`">
-                                <source src="videos/Project42.mp4" type="video/mp4">
+                            <video loop muted playsinline preload="none" poster="images/Project42.png">
+                                <source data-src="videos/Project42.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
+                        <span class="video-hint">Tap to play</span>
                     </div>
                     <div class="project-info">
                         <div class="project-header">
                             <div class="project-icon">
-                                <img src="images/Project42.png" alt=" Ant Colony">
+                                <img src="images/Project42.png" alt=" Ant Colony" loading="lazy" decoding="async">
                             </div>
                             <div class="title-category">
                                 <h3 class="project-title"> Ant Battle</h3>
@@ -2484,12 +2534,12 @@
                 <!-- Epic Lotus Games — Flutter utility apps -->
                 <div class="project-item utility">
                     <div class="project-media">
-                        <img src="images/Project43.png" alt="Blower Fan" class="project-poster">
+                        <img src="images/Project43.png" alt="Blower Fan" loading="lazy" decoding="async" class="project-poster">
                     </div>
                     <div class="project-info">
                         <div class="project-header">
                             <div class="project-icon">
-                                <img src="images/Project43.png" alt="Blower Fan Icon">
+                                <img src="images/Project43.png" alt="Blower Fan Icon" loading="lazy" decoding="async">
                             </div>
                             <div class="title-category">
                                 <h3 class="project-title">Blower Fan</h3>
@@ -2526,12 +2576,12 @@
 
                 <div class="project-item utility">
                     <div class="project-media">
-                        <img src="images/Project44.png" alt="Does He Really Like Me?" class="project-poster">
+                        <img src="images/Project44.png" alt="Does He Really Like Me?" loading="lazy" decoding="async" class="project-poster">
                     </div>
                     <div class="project-info">
                         <div class="project-header">
                             <div class="project-icon">
-                                <img src="images/Project44.png" alt="Does He Really Like Me? Icon">
+                                <img src="images/Project44.png" alt="Does He Really Like Me? Icon" loading="lazy" decoding="async">
                             </div>
                             <div class="title-category">
                                 <h3 class="project-title">Does He Really Like Me?</h3>
@@ -2568,12 +2618,12 @@
 
                 <div class="project-item utility">
                     <div class="project-media">
-                        <img src="images/Project45.png" alt="Broken Video Repair App" class="project-poster">
+                        <img src="images/Project45.png" alt="Broken Video Repair App" loading="lazy" decoding="async" class="project-poster">
                     </div>
                     <div class="project-info">
                         <div class="project-header">
                             <div class="project-icon">
-                                <img src="images/Project45.png" alt="Broken Video Repair App Icon">
+                                <img src="images/Project45.png" alt="Broken Video Repair App Icon" loading="lazy" decoding="async">
                             </div>
                             <div class="title-category">
                                 <h3 class="project-title">Broken Video Repair App</h3>
@@ -2610,12 +2660,12 @@
 
                 <div class="project-item utility">
                     <div class="project-media">
-                        <img src="images/Project46.png" alt="PregnaTest Pregnancy Test App" class="project-poster">
+                        <img src="images/Project46.png" alt="PregnaTest Pregnancy Test App" loading="lazy" decoding="async" class="project-poster">
                     </div>
                     <div class="project-info">
                         <div class="project-header">
                             <div class="project-icon">
-                                <img src="images/Project46.png" alt="PregnaTest Icon">
+                                <img src="images/Project46.png" alt="PregnaTest Icon" loading="lazy" decoding="async">
                             </div>
                             <div class="title-category">
                                 <h3 class="project-title">PregnaTest Pregnancy Test App</h3>
@@ -2652,12 +2702,12 @@
 
                 <div class="project-item utility">
                     <div class="project-media">
-                        <img src="images/Project47.png" alt="Big Font - Text Size Changer" class="project-poster">
+                        <img src="images/Project47.png" alt="Big Font - Text Size Changer" loading="lazy" decoding="async" class="project-poster">
                     </div>
                     <div class="project-info">
                         <div class="project-header">
                             <div class="project-icon">
-                                <img src="images/Project47.png" alt="Big Font Icon">
+                                <img src="images/Project47.png" alt="Big Font Icon" loading="lazy" decoding="async">
                             </div>
                             <div class="title-category">
                                 <h3 class="project-title">Big Font — Text Size Changer</h3>
@@ -2694,12 +2744,12 @@
 
                 <div class="project-item utility">
                     <div class="project-media">
-                        <img src="images/Project48.png" alt="Text Note to PDF Converter" class="project-poster">
+                        <img src="images/Project48.png" alt="Text Note to PDF Converter" loading="lazy" decoding="async" class="project-poster">
                     </div>
                     <div class="project-info">
                         <div class="project-header">
                             <div class="project-icon">
-                                <img src="images/Project48.png" alt="Text Note to PDF Converter Icon">
+                                <img src="images/Project48.png" alt="Text Note to PDF Converter Icon" loading="lazy" decoding="async">
                             </div>
                             <div class="title-category">
                                 <h3 class="project-title">Text Note to PDF Converter</h3>
@@ -2737,12 +2787,12 @@
                 <!-- Epic Lotus Games — Unity titles -->
                 <div class="project-item simulation casual">
                     <div class="project-media">
-                        <img src="images/Project49.png" alt="Fireworks Simulator and Prank" class="project-poster">
+                        <img src="images/Project49.png" alt="Fireworks Simulator and Prank" loading="lazy" decoding="async" class="project-poster">
                     </div>
                     <div class="project-info">
                         <div class="project-header">
                             <div class="project-icon">
-                                <img src="images/Project49.png" alt="Fireworks Simulator Icon">
+                                <img src="images/Project49.png" alt="Fireworks Simulator Icon" loading="lazy" decoding="async">
                             </div>
                             <div class="title-category">
                                 <h3 class="project-title">Fireworks Simulator &amp; Prank</h3>
@@ -2780,12 +2830,12 @@
 
                 <div class="project-item casual">
                     <div class="project-media">
-                        <img src="images/Project50.png" alt="Makeup and Dress Up Games" class="project-poster">
+                        <img src="images/Project50.png" alt="Makeup and Dress Up Games" loading="lazy" decoding="async" class="project-poster">
                     </div>
                     <div class="project-info">
                         <div class="project-header">
                             <div class="project-icon">
-                                <img src="images/Project50.png" alt="Makeup and Dress Up Games Icon">
+                                <img src="images/Project50.png" alt="Makeup and Dress Up Games Icon" loading="lazy" decoding="async">
                             </div>
                             <div class="title-category">
                                 <h3 class="project-title">Makeup &amp; Dress Up Games</h3>
@@ -2823,12 +2873,12 @@
 
                 <div class="project-item casual hypercasual">
                     <div class="project-media">
-                        <img src="images/Project51.png" alt="Beat Smash EDM Rush Music Game" class="project-poster">
+                        <img src="images/Project51.png" alt="Beat Smash EDM Rush Music Game" loading="lazy" decoding="async" class="project-poster">
                     </div>
                     <div class="project-info">
                         <div class="project-header">
                             <div class="project-icon">
-                                <img src="images/Project51.png" alt="Beat Smash Icon">
+                                <img src="images/Project51.png" alt="Beat Smash Icon" loading="lazy" decoding="async">
                             </div>
                             <div class="title-category">
                                 <h3 class="project-title">Beat Smash — EDM Rush</h3>
@@ -2877,14 +2927,21 @@
                 </div>
                 <div class="footer-links">
                     <a href="index.html#home">Home</a>
+                    <a href="index.html#about">About</a>
                     <a href="index.html#skills">Skills</a>
-                    <a href="index.html#projects">Projects</a>
+                    <a href="projects.html">Projects</a>
                     <a href="index.html#services">Services</a>
-                    <a href="index.html#testimonials">Testimonials</a>
+                    <a href="index.html#contact">Contact</a>
+                </div>
+                <div class="footer-socials">
+                    <a href="mailto:rakholiyavaibhav@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://www.upwork.com/" target="_blank" rel="noopener noreferrer" aria-label="Upwork"><i class="fas fa-briefcase"></i></a>
+                    <a href="https://github.com/vaibhavrakholiya" target="_blank" rel="me noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/vaibhav-rakholiya-130169190" target="_blank" rel="me noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Vaibhav Rakholiya. All Rights Reserved.</p>
+                <p>&copy; <span id="year">2025</span> Vaibhav Rakholiya. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
